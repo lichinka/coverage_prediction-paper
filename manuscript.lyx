@@ -82,6 +82,7 @@
 \html_be_strict false
 \author 67598359 "Lucas Benedicic,,," 
 \author 258802063 "fcruz" 
+\author 450331270 "Lucas Benedicic,209,2516,-,-" 
 \end_header
 
 \begin_body
@@ -3963,11 +3964,7 @@ the
 \begin_inset space ~
 \end_inset
 
-km 
-\change_deleted 258802063 1354042731
-radius 
-\change_unchanged
-around each transmitter, 
+km radius around each transmitter, 
 \change_inserted 258802063 1354042764
 we assume that 
 \change_unchanged
@@ -5104,7 +5101,9 @@ reference "fig:weak_scalability_relative_time-80"
 \end_inset
 
 , respectively.
- We have explicitly excluded the 
+ 
+\change_deleted 450331270 1354271648
+We have explicitly excluded the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5121,13 +5120,23 @@ reference "fig:master_process"
 
 ) since its time is constant for all problem instances, thus not adding
  extra information about the scalability of the parallel version itself.
- Consequently, for the relative-processing-time plots we use the formula
+ Consequently, for t
+\change_inserted 450331270 1354271648
+T
+\change_unchanged
+he relative-processing-time plots 
+\change_deleted 450331270 1354271653
+we use
+\change_inserted 450331270 1354271654
+follow
+\change_unchanged
+ the formula
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-RT=\frac{t_{\textrm{ps}}+t_{\textrm{db}}+t_{\textrm{pl}}+t_{\textrm{cp}}}{t_{\textrm{total}}-t_{\textrm{rd}}},\label{eq:relative_processing_time}
+RT=\frac{t_{\textrm{rd}}+t_{\textrm{ps}}+t_{\textrm{db}}+t_{\textrm{pl}}+t_{\textrm{cp}}}{t_{\textrm{total}}},\label{eq:relative_processing_time}
 \end{equation}
 
 \end_inset
@@ -5137,7 +5146,23 @@ RT=\frac{t_{\textrm{ps}}+t_{\textrm{db}}+t_{\textrm{pl}}+t_{\textrm{cp}}}{t_{\te
 
 \begin_layout Standard
 \noindent
-where 
+where
+\change_inserted 450331270 1354271694
+ 
+\begin_inset Formula $t_{\textrm{rd}}$
+\end_inset
+
+ is the 
+\begin_inset Quotes eld
+\end_inset
+
+Read input data
+\begin_inset Quotes erd
+\end_inset
+
+ wall-clock time,
+\change_unchanged
+ 
 \begin_inset Formula $t_{\textrm{ps}}$
 \end_inset
 
@@ -5185,11 +5210,17 @@ Create final coverage prediction
 \begin_inset Quotes erd
 \end_inset
 
- step, 
+ step,
+\change_inserted 450331270 1354271699
+ and
+\change_unchanged
+ 
 \begin_inset Formula $t_{\textrm{total}}$
 \end_inset
 
- is the total wall-clock processing time, and 
+ is the total wall-clock processing time
+\change_deleted 450331270 1354271707
+, and 
 \begin_inset Formula $t_{\textrm{rd}}$
 \end_inset
 
@@ -5201,7 +5232,9 @@ Read input data
 \begin_inset Quotes erd
 \end_inset
 
- wall-clock time.
+ wall-clock time
+\change_unchanged
+.
  For a reference of the different steps taking part of the master process,
  see Figure 
 \begin_inset CommandInset ref
@@ -5494,6 +5527,8 @@ Input data broadcasting
 \change_unchanged
  from 4 to 8 cores, i.e.
  from one to two computing nodes
+\change_inserted 450331270 1354276931
+,
 \change_inserted 258802063 1354044470
  as each node hosts 
 \begin_inset Quotes eld
@@ -5532,13 +5567,13 @@ for
 \change_inserted 258802063 1354044340
 when
 \change_unchanged
- more than one computing node hosting 
-\change_inserted 258802063 1354044492
-the 
-\change_unchanged
-worker processes
+ more than one computing node 
+\change_deleted 450331270 1354277011
+hosting the worker processes
 \change_inserted 258802063 1354044350
  participate
+\change_inserted 450331270 1354277019
+s in the parallel processing
 \change_unchanged
 .
  
@@ -5596,9 +5631,16 @@ Create final
 \change_inserted 258802063 1354044850
 as we increase the number of cores 
 \change_unchanged
-the relative times grow proportionally for problem sizes 20 and 80
-\change_inserted 258802063 1354044828
- transmitters per core (see Figure 
+the relative times grow proportionally for 
+\change_inserted 450331270 1354277108
+all three 
+\change_unchanged
+problem sizes
+\change_inserted 450331270 1354277120
+.
+
+\change_deleted 450331270 1354277115
+ 20 and 80 transmitters per core (see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:weak_scalability_relative_time-20"
@@ -5615,23 +5657,17 @@ reference "fig:weak_scalability_relative_time-80"
  respectively)
 \change_deleted 67598359 1354200809
 ,
-\change_inserted 67598359 1354200809
+\change_deleted 450331270 1354277115
 .
 
 \change_deleted 258802063 1354044865
  whereas
-\change_inserted 67598359 1354200812
+\change_deleted 450331270 1354277115
  
 \change_deleted 67598359 1354200813
 i
-\change_inserted 67598359 1354200813
-I
-\change_inserted 258802063 1354044875
-n contrast,
-\change_unchanged
- for the instance with 5 transmitters per core
-\change_inserted 258802063 1354044782
- (see Figure 
+\change_deleted 450331270 1354277115
+In contrast, for the instance with 5 transmitters per core (see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:weak_scalability_relative_time-5"
@@ -5641,16 +5677,12 @@ reference "fig:weak_scalability_relative_time-5"
 )
 \change_deleted 258802063 1354044884
 ,
-\change_unchanged
- 
-\change_inserted 258802063 1354045003
-the time spent 
+\change_deleted 450331270 1354277115
+ the time spent 
 \change_deleted 67598359 1354200825
 in
-\change_inserted 67598359 1354200827
-during the
-\change_inserted 258802063 1354045003
- 
+\change_deleted 450331270 1354277115
+during the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5658,14 +5690,10 @@ Create final coverage prediction
 \begin_inset Quotes erd
 \end_inset
 
- step remains 
-\change_inserted 67598359 1354203306
-almost 
-\change_inserted 258802063 1354045003
-constant when comparing different number of cores
+ step remains almost constant when comparing different number of cores
 \change_deleted 258802063 1354044983
 they are almost constant
-\change_unchanged
+\change_deleted 450331270 1354277115
 .
  This is directly related to the time the database server takes to aggregate
  the partial path-loss predictions, for which the number of database tables
@@ -7425,7 +7453,9 @@ study
 ,
 \change_unchanged
  as we increase the number of cores used for a fixed problem size.
- Again, we have explicitly excluded the 
+ 
+\change_deleted 450331270 1354277193
+Again, we have explicitly excluded the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -7435,7 +7465,9 @@ Read input data
 
  step because it does not contribute any information about the scalability
  of the parallel version itself.
- In this case, we have created plots for four problem instances namely 64,
+ 
+\change_unchanged
+In this case, we have created plots for four problem instances namely 64,
  256, 1024, and 4096 transmitters, which are shown in Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7714,6 +7746,18 @@ name "fig:strong_scalability_relative_time-4096"
 
 \begin_layout Standard
 We may observe the non-parallel steps comprising 
+\change_inserted 450331270 1354277251
+
+\begin_inset Quotes eld
+\end_inset
+
+Read input data
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\change_unchanged
+
 \begin_inset Quotes eld
 \end_inset
 

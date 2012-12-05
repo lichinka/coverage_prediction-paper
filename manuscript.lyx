@@ -652,8 +652,12 @@ key "Saleh_On_the_coveraga_extension_in_LTE_networks:2010"
 
 \begin_layout Standard
 Despite various options of commercial tools, specialized in radio-propagation
- modeling, the common thread among all of the them is the restricted nature
- of its usage, mostly dominated by black-box implementations.
+ modeling, the common thread among all of
+\change_deleted 258802063 1354740788
+ the
+\change_unchanged
+ them is the restricted nature of its usage, mostly dominated by black-box
+ implementations.
  This fact induces lack of adaptability, sometimes even combined with cumbersome
  user interfaces that are not suitable for big batch jobs, involving thousands
  of transmitters.
@@ -680,8 +684,21 @@ Parallel computation on computer clusters
 \end_layout
 
 \begin_layout Standard
-To reach high levels of performance and scalability, the presented work
- takes advantage of specialized hardware, e.g.
+
+\change_inserted 258802063 1354747025
+In consideration of the high computational-intensity of predicting the radio-cov
+erage or a real mobile network, the use of a computer cluster is required,
+ i.e.
+ a group of interconnected computers that work together as a single system.
+ 
+\change_unchanged
+To reach high levels of 
+\change_inserted 258802063 1354747087
+parallel 
+\change_unchanged
+performance and scalability, 
+\change_deleted 258802063 1354747142
+the presented work takes advantage of specialized hardware, e.g.
  a cluster of computers that is set up to share login credentials for one
  user and a networked file system, like NFS 
 \begin_inset CommandInset citation
@@ -691,13 +708,44 @@ key "Shepler_Network_file_system:2003"
 \end_inset
 
 .
- The key step for reaching high-performance levels is to distribute the
- computational load among the computing nodes that belong to the cluster.
+ The
+\change_inserted 258802063 1354747246
+this work discusses in detail the
+\change_unchanged
+ key step
+\change_inserted 258802063 1354747121
+s
+\change_unchanged
+ 
+\change_inserted 258802063 1354747282
+of: parallel decomposition of the radio-coverage prediction problem for
+ real networks and 
+\change_deleted 258802063 1354747208
+for reaching high-performance levels is to distribute
+\change_inserted 258802063 1354747214
+the distribution of
+\change_unchanged
+ the computational load among the computing nodes that belong to the cluster.
 \end_layout
 
 \begin_layout Standard
-Such clusters typically consist of several commodity PCs connected through
- a high-speed local network.
+Such 
+\change_inserted 258802063 1354747338
+computer 
+\change_unchanged
+clusters typically consist of several commodity PCs connected through a
+ high-speed local network
+\change_inserted 258802063 1354747445
+ with a distributed file system, like NFS 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shepler_Network_file_system:2003"
+
+\end_inset
+
+
+\change_unchanged
+.
  One such system is the DEGIMA cluster 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -705,8 +753,29 @@ key "Hamada_Cluster_of_GPUs:2010"
 
 \end_inset
 
- at the Nagasaki Advanced Computing Center of the Nagasaki University, which
- currently holds the third place of the Green 500 list
+ at the Nagasaki Advanced Computing Center of the Nagasaki University
+\change_inserted 258802063 1354747666
+.
+\change_deleted 258802063 1354747665
+, 
+\change_inserted 258802063 1354747902
+ This system ranked in the TOP500 list of supercomputers until June 2012
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 258802063 1354747762
+http://www.top500.org
+\end_layout
+
+\end_inset
+
+, and in June 2011 held the 
+\change_deleted 258802063 1354747737
+which currently holds the 
+\change_unchanged
+third place of the Green 500 list
 \begin_inset Foot
 status open
 
@@ -716,6 +785,10 @@ http://www.green500.org
 
 \end_inset
 
+
+\change_inserted 258802063 1354747857
+ as one of the most energy-efficient supercomputers of the world
+\change_unchanged
 .
 \end_layout
 
@@ -748,9 +821,17 @@ name "sub:Objectives"
 \end_layout
 
 \begin_layout Standard
-The main goal of this work is to develop a high-performance parallel radio
- prediction tool (PRATO) for radio networks, which performance will allow
- its use in large real-world environments.
+The main goal of this work is to develop a 
+\change_inserted 258802063 1354748185
+radio prediction tool to be used for large real-world networks environments,
+ such as the ones currently deployed by mobile phone operators.
+ To achieve this, we have developed a 
+\change_unchanged
+high-performance parallel radio prediction tool (PRATO) for radio networks
+\change_deleted 258802063 1354748194
+, which performance will allow its use in large real-world environments
+\change_unchanged
+.
  Therefore, our focus is on the performance and scalability of PRATO, while
  other more dynamic aspects of radio networks are not considered.
  Among these aspects are code distributions, details of (soft) handover,
@@ -1326,7 +1407,15 @@ name "sub:GRASS-GIS"
 \end_layout
 
 \begin_layout Standard
-As the target environment we have chosen the GRASS
+As the target 
+\change_inserted 258802063 1354748315
+software 
+\change_unchanged
+environment 
+\change_inserted 258802063 1354748327
+for PRATO 
+\change_unchanged
+we have chosen the GRASS
 \change_inserted 258802063 1354031875
  (Geographic Resources Analysis Support System)
 \change_deleted 258802063 1354031907
@@ -1340,9 +1429,9 @@ key "neteler2002:GRASS_GIS"
 \end_inset
 
 
-\change_inserted 258802063 1354031942
-, which is an open source, free software (FOSS) Geographical Information
- System (GIS)
+\change_inserted 258802063 1354748554
+, which is a free and open-source software (FOSS) project that implements
+ a Geographical Information System (GIS)
 \change_unchanged
 .
  This GIS software was originally developed at the US Army Construction
@@ -1365,6 +1454,10 @@ key "Stallman_GNU_License:1991"
 
 \end_inset
 
+
+\change_inserted 258802063 1354748592
+ 
+\change_unchanged
 and imposes the availability of the source code.
  This allows us to make potential modifications to the system, thus adapting
  it for the parallel computation environment.
@@ -1401,7 +1494,11 @@ reference "fig:serial_version_flow_diagram"
 
 \end_inset
 
-, where the parallelograms represent input/output (I/O) operations.
+, where the parallelograms 
+\change_inserted 258802063 1354748620
+in the flow diagram 
+\change_unchanged
+represent input/output (I/O) operations.
  
 \end_layout
 
@@ -1417,17 +1514,32 @@ key "Ozimek_Open.source.radio.coverage.prediction:2010"
 
 , but with some essential differences.
  Specifically, we have decided to avoid the modular design to prevent the
- overhead of I/O operations, which communicate data between the components
- of the modular architecture.
+ overhead of I/O operations, 
+\change_deleted 258802063 1354748649
+which communicate
+\change_inserted 258802063 1354748656
+for communicating
+\change_unchanged
+ data between the components of the modular architecture.
  Instead, we have chosen a monolithic design, in which all the steps for
  generating the radio coverage prediction are calculated inside one GRASS
  module.
- Regarding the the way results are saved, our approach employs a direct
- connection to an external database server, instead of the slow built-in
- GRASS database drivers.
+ Regarding
+\change_deleted 258802063 1354748684
+ the 
+\change_inserted 258802063 1354748686
+ 
+\change_unchanged
+the way results are saved, our approach employs a direct connection to an
+ external database server, instead of the slow built-in GRASS database drivers.
  To explicitly avoid tight coupling with a specific database vendor, the
- generated output is formatted in plain text, which is simply forwarded
- to the database server.
+ generated output is formatted in plain text, which is
+\change_deleted 258802063 1354748701
+ simply
+\change_inserted 258802063 1354748704
+ then
+\change_unchanged
+ forwarded to the database server.
  Any further processing is achieved by issuing a query over the database
  tables that contain the partial results for each of the processed transmitters.
 \end_layout
@@ -2326,6 +2438,70 @@ name "fig:output_raster_example"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+
+\change_inserted 258802063 1354740536
+Multi-paradigm parallel programming
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 258802063 1354740536
+The implementation methodology adopted for PRATO follows a multi-paradigm
+ parallel programming approach in order to fully use the resources of a
+ computing cluster.
+ To effectively use a shared memory multi-processor, PRATO uses POSIX threads
+ to implement parallelism 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Butenhof_Programming.with.POSIX.threads:1997"
+
+\end_inset
+
+.
+ In a nutshell, POSIX thread or Pthread is a POSIX standard for creating
+ and manipulating light-weight processes or threads.
+ By using POSIX threads, multiple threads can exist within the same process
+ while sharing its resources.
+ For instance, an application using POSIX threads can: execute multiple
+ threads in parallel by using the cores of multi-core processor, or use
+ the system resources more effectively by avoiding process execution-halt
+ due to I/O latency by using one thread for computing while a second threads
+ waits for an I/O operation to complete.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 258802063 1354740536
+To use the computing resources of a distributed memory system, such as a
+ cluster of processors, PRATO uses the Message Passing Interface or MPI
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gropp_Using_MPI:1999"
+
+\end_inset
+
+.
+ MPI is a message-passing standard which defines syntax and semantics designed
+ to function on a wide variety of parallel computers.
+ MPI enables multiple processes running on different processors of a computer
+ cluster to communicate with each other.
+ MPI was designed for high performance on both massively parallel machines
+ and on workstation clusters.
+ It has been developed by a broadly based committee of vendors, developers,
+ and users.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 258802063 1354740536
+In order to make the text more clear and to differentiate between the programmin
+g paradigms used from here on we will refer to a POSIX thread simply as
+ a `thread' and a MPI proccess as a `process'.
 \end_layout
 
 \begin_layout Subsection
@@ -3276,7 +3452,7 @@ POSIX
 s
 \change_inserted 258802063 1354041199
  better use of the system resources
-\change_inserted 67598359 1354199878
+\change_deleted 258802063 1354740668
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -3291,8 +3467,8 @@ key "Butenhof_Programming.with.POSIX.threads:1997"
 
 \begin_layout Standard
 After the broadcasted data are received
-\change_inserted 258802063 1354041220
- by all the worker threads
+\change_inserted 258802063 1354748825
+ by all the worker processes
 \change_unchanged
 , 
 \change_deleted 258802063 1354041241
@@ -3797,10 +3973,14 @@ name "fig:master_worker_communication"
 \end_layout
 
 \begin_layout Subsection
+
+\change_deleted 258802063 1354740506
 The MPI framework
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 258802063 1354740506
 The implementation methodology adopted for the parallel version of the simulator
  uses the Message Passing Interface or MPI 
 \begin_inset CommandInset citation
@@ -3819,6 +3999,8 @@ key "Gropp_Using_MPI:1999"
  and on workstation clusters.
  It has been developed by a broadly based committee of vendors, developers,
  and users.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section

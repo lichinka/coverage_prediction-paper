@@ -7090,9 +7090,14 @@ Measured speed-up for strong-scalability experiments.
 \emph on
  
 \emph default
-The speed-up axis is expressed in base-10 logarithmic scale, whereas the
- axis representing the number of cores is expressed in base-2 logarithmic
- scale.
+The speed-up axis is expressed in base-
+\change_deleted 450331270 1354629358
+10
+\change_inserted 450331270 1354629359
+2
+\change_inserted 258802063 1354120481
+ logarithmic scale, whereas the axis representing the number of cores is
+ expressed in base-2 logarithmic scale.
 \change_unchanged
 
 \begin_inset CommandInset label

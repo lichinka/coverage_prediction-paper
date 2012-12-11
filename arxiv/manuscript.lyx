@@ -10,9 +10,16 @@
 \else
 \usepackage[caption=false,font=footnotesize]{subfig}
 \fi
+%
 % color tables
+%
 \usepackage{colortbl}
 \definecolor{gray}{rgb}{0.9,0.9,0.9}
+%
+% Format of Figure cross-references
+%
+\usepackage{prettyref}
+\newrefformat{fig}{Fig.~\ref{#1}}
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children false
@@ -75,14 +82,11 @@
 \papercolumns 2
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 67598359 "Lucas Benedicic,,," 
-\author 258802063 "fcruz" 
-\author 450331270 "Lucas Benedicic,209,2516,-,-" 
 \end_header
 
 \begin_body
@@ -180,55 +184,11 @@ A.
 \begin_inset space ~
 \end_inset
 
-Cruz,
-\change_deleted 67598359 1354205064
-
+Cruz, Tsuyoshi
 \begin_inset space ~
 \end_inset
 
-
-\change_unchanged
-
-\begin_inset Flex IEEE membership
-status open
-
-\begin_layout Plain Layout
-
-\change_deleted 258802063 1354022758
-Member,
-\begin_inset space ~
-\end_inset
-
-IEEE,
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
- Tsuyoshi
-\begin_inset space ~
-\end_inset
-
-Hamada,
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Flex IEEE membership
-status open
-
-\begin_layout Plain Layout
-Member,
-\begin_inset space ~
-\end_inset
-
-IEEE,
-\end_layout
-
-\end_inset
-
- Peter
+Hamada, Peter
 \begin_inset space ~
 \end_inset
 
@@ -245,31 +205,13 @@ v{s}
 
 \end_inset
 
-ec,
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Flex IEEE membership
+ec
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Member,
-\begin_inset space ~
-\end_inset
-
-IEEE
-\change_deleted 67598359 1354197750
-,
-\change_unchanged
-
+----------------------------------
 \end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
 
 \begin_layout Plain Layout
 Lucas
@@ -311,7 +253,14 @@ type "mailto:"
 
 \end_inset
 
-.
+, www: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://csd.ijs.si/benedicic/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -408,7 +357,7 @@ type "mailto:"
 \end_layout
 
 \begin_layout Page headings
-IEEE Transactions on Parallel and Distributed Systems
+arXiv.org
 \begin_inset ERT
 status collapsed
 
@@ -525,44 +474,13 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-More than 20 years have passed since the world's first GSM 
-\change_inserted 258802063 1354024802
-mobile 
-\change_unchanged
-call was made in Finland.
- Still, 
-\change_inserted 258802063 1354024690
-the 
-\change_deleted 258802063 1354024713
-radio-
-\change_unchanged
-coverage planning
-\change_inserted 258802063 1354024744
- of the radio network
-\change_deleted 258802063 1354024717
- 
-\change_inserted 258802063 1354032179
- 
-\change_unchanged
-remains a key problem that all mobile operators have to deal with.
- Moreover, it has proven to be a fundamental issue
-\change_deleted 258802063 1354032227
-,
-\change_unchanged
- not only in GSM
-\change_inserted 258802063 1354024780
- networks
-\change_deleted 258802063 1354032230
-,
-\change_unchanged
- but also in modern standards
-\change_inserted 258802063 1354032378
-,
-\change_deleted 258802063 1354032272
-,
-\change_unchanged
- such as the third generation (3G) UMTS and the fourth generation (4G) LTE
- Advanced 
+More than 20 years have passed since the world's first GSM mobile call was
+ made in Finland.
+ Still, the coverage planning of the radio network remains a key problem
+ that all mobile operators have to deal with.
+ Moreover, it has proven to be a fundamental issue not only in GSM networks
+ but also in modern standards, such as the third generation (3G) UMTS and
+ the fourth generation (4G) LTE Advanced 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Saleh_On_the_coveraga_extension_in_LTE_networks:2010,Shabbir_Comparison_of_radio_propagation_models:2011,Siomina:Minimum.pilot.power.for.service.coverage,Valcarce_Applying.FDTD.to.the.coverage.prediction.of.WiMAX:2009"
@@ -570,60 +488,20 @@ key "Saleh_On_the_coveraga_extension_in_LTE_networks:2010,Shabbir_Comparison_of_
 \end_inset
 
 .
- 
-\change_inserted 258802063 1354032494
-In radio networks is generally the case that the radio stations are installed
- at fixed locations
-\change_deleted 258802063 1354023170
-Clearly
-\change_unchanged
-,
-\change_inserted 258802063 1354023953
- for this reason
-\change_unchanged
- one of the primary objectives of mobile-network planning is to efficiently
- use the allocated frequency band to assure 
-\change_inserted 258802063 1354025087
-that the whole of the geographic area of interest can be satisfactorily
- reached with the radio stations of the network
-\change_deleted 258802063 1354023567
-the necessary radio coverage is achieved
-\change_unchanged
-.
- 
-\change_inserted 258802063 1354031057
-To this end, radio-coverage prediction tools are of great importance as
+ In radio networks is generally the case that the radio stations are installed
+ at fixed locations, for this reason one of the primary objectives of mobile-net
+work planning is to efficiently use the allocated frequency band to assure
+ that the whole of the geographic area of interest can be satisfactorily
+ reached with the radio stations of the network.
+ To this end, radio-coverage prediction tools are of great importance as
  it allows the network engineers to test different network configurations
- before 
-\change_deleted 67598359 1354204075
-physicaly
-\change_inserted 67598359 1354204075
-physically
-\change_inserted 258802063 1354031057
- implementing the changes.
- Nevertheless, radio-coverage prediction is a complex task due to
-\change_deleted 258802063 1354025267
-The complexity of this task arises from
-\change_unchanged
- the wide range of various combinations of hardware and configuration parameters
-\change_deleted 258802063 1354025335
-,
-\change_unchanged
- which have to be analyzed in the context of different environments
-\change_inserted 258802063 1354031076
-.
- The complexity of the problem means that radio-coverage prediction 
-\change_deleted 258802063 1354025503
-, certainly increasing their evaluation-time complexity
-\change_inserted 258802063 1354031174
-can be a computational
-\change_inserted 67598359 1354204104
-l
-\change_inserted 258802063 1354031174
-y-intensive and time-consuming task, hence the importance of fast and accurate
- prediction tools
-\change_unchanged
-.
+ before physically implementing the changes.
+ Nevertheless, radio-coverage prediction is a complex task due to the wide
+ range of various combinations of hardware and configuration parameters
+ which have to be analyzed in the context of different environments.
+ The complexity of the problem means that radio-coverage prediction can
+ be a computationally-intensive and time-consuming task, hence the importance
+ of fast and accurate prediction tools.
 \end_layout
 
 \begin_layout Standard
@@ -652,12 +530,8 @@ key "Saleh_On_the_coveraga_extension_in_LTE_networks:2010"
 
 \begin_layout Standard
 Despite various options of commercial tools, specialized in radio-propagation
- modeling, the common thread among all of
-\change_deleted 258802063 1354740788
- the
-\change_unchanged
- them is the restricted nature of its usage, mostly dominated by black-box
- implementations.
+ modeling, the common thread among all of them is the restricted nature
+ of its usage, mostly dominated by black-box implementations.
  This fact induces lack of adaptability, sometimes even combined with cumbersome
  user interfaces that are not suitable for big batch jobs, involving thousands
  of transmitters.
@@ -684,67 +558,26 @@ Parallel computation on computer clusters
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258802063 1354747025
 In consideration of the high computational-intensity of predicting the radio-cov
 erage or a real mobile network, the use of a computer cluster is required,
  i.e.
  a group of interconnected computers that work together as a single system.
- 
-\change_unchanged
-To reach high levels of 
-\change_inserted 258802063 1354747087
-parallel 
-\change_unchanged
-performance and scalability, 
-\change_deleted 258802063 1354747142
-the presented work takes advantage of specialized hardware, e.g.
- a cluster of computers that is set up to share login credentials for one
- user and a networked file system, like NFS 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Shepler_Network_file_system:2003"
-
-\end_inset
-
-.
- The
-\change_inserted 258802063 1354747246
-this work discusses in detail the
-\change_unchanged
- key step
-\change_inserted 258802063 1354747121
-s
-\change_unchanged
- 
-\change_inserted 258802063 1354747282
-of: parallel decomposition of the radio-coverage prediction problem for
- real networks and 
-\change_deleted 258802063 1354747208
-for reaching high-performance levels is to distribute
-\change_inserted 258802063 1354747214
-the distribution of
-\change_unchanged
- the computational load among the computing nodes that belong to the cluster.
+ To reach high levels of parallel performance and scalability, this work
+ discusses in detail the key steps of: parallel decomposition of the radio-cover
+age prediction problem for real networks and the distribution of the computation
+al load among the computing nodes that belong to the cluster.
 \end_layout
 
 \begin_layout Standard
-Such 
-\change_inserted 258802063 1354747338
-computer 
-\change_unchanged
-clusters typically consist of several commodity PCs connected through a
- high-speed local network
-\change_inserted 258802063 1354747445
- with a distributed file system, like NFS 
+Such computer clusters typically consist of several commodity PCs connected
+ through a high-speed local network with a distributed file system, like
+ NFS 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Shepler_Network_file_system:2003"
 
 \end_inset
 
-
-\change_unchanged
 .
  One such system is the DEGIMA cluster 
 \begin_inset CommandInset citation
@@ -753,29 +586,18 @@ key "Hamada_Cluster_of_GPUs:2010"
 
 \end_inset
 
- at the Nagasaki Advanced Computing Center of the Nagasaki University
-\change_inserted 258802063 1354747666
-.
-\change_deleted 258802063 1354747665
-, 
-\change_inserted 258802063 1354747902
- This system ranked in the TOP500 list of supercomputers until June 2012
+ at the Nagasaki Advanced Computing Center of the Nagasaki University.
+ This system ranked in the TOP 500 list of supercomputers until June 2012
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 258802063 1354747762
 http://www.top500.org
 \end_layout
 
 \end_inset
 
-, and in June 2011 held the 
-\change_deleted 258802063 1354747737
-which currently holds the 
-\change_unchanged
-third place of the Green 500 list
+, and in June 2011 held the third place of the Green 500 list
 \begin_inset Foot
 status open
 
@@ -785,11 +607,7 @@ http://www.green500.org
 
 \end_inset
 
-
-\change_inserted 258802063 1354747857
- as one of the most energy-efficient supercomputers of the world
-\change_unchanged
-.
+ as one of the most energy-efficient supercomputers of the world.
 \end_layout
 
 \begin_layout Standard
@@ -821,35 +639,15 @@ name "sub:Objectives"
 \end_layout
 
 \begin_layout Standard
-The main goal of this work is to develop a 
-\change_inserted 258802063 1354748185
-radio prediction tool to be used for large real-world networks environments,
- such as the ones currently deployed by mobile phone operators.
- To achieve this, we have developed a 
-\change_unchanged
-high-performance parallel radio prediction tool (PRATO) for radio networks
-\change_deleted 258802063 1354748194
-, which performance will allow its use in large real-world environments
-\change_unchanged
-.
+The main goal of this work is to develop a radio prediction tool to be used
+ in large real-world network environments, such as the ones currently deployed
+ by mobile operators.
+ To achieve this, we have developed a high-performance parallel radio prediction
+ tool (PRATO) for radio networks.
  Therefore, our focus is on the performance and scalability of PRATO, while
  other more dynamic aspects of radio networks are not considered.
  Among these aspects are code distributions, details of (soft) handover,
  and dynamics related to radio resource management.
-\change_deleted 67598359 1354197951
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -982,33 +780,16 @@ name "sec:Description-of-the-radio-coverage-prediction-tool"
 
 \begin_layout Standard
 PRATO is a high-performance radio-prediction tool for GSM (2G), UMTS (3G)
- and LTE (4G) radio networks
-\change_inserted 67598359 1354198057
-.
- It is
-\change_inserted 258802063 1354031827
- implemented as a module for the GRASS Geographical Information System (
-\change_deleted 67598359 1354198062
-F
-\change_inserted 67598359 1354198062
-f
-\change_inserted 258802063 1354031827
-or details of GRASS see 
-\change_deleted 67598359 1354198176
-s
-\change_inserted 67598359 1354198176
-S
-\change_inserted 258802063 1354031827
-ection 
+ and LTE (4G) radio networks.
+ It is implemented as a module for the GRASS Geographical Information System
+ (for details of GRASS see Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:GRASS-GIS"
 
 \end_inset
 
-)
-\change_unchanged
-.
+).
  It can be used for planning the different phases of a new radio-network
  installation, as well as a support tool for maintenance activities related
  to network troubleshooting or upgrading.
@@ -1033,101 +814,38 @@ key "Ozimek_Open.source.radio.coverage.prediction:2010"
  The output result, saved as a raster map, is the maximum signal level over
  the target area, in which each point represents the received signal from
  the best serving cell (transmitter).
- This work implements some well-known radio propagation models
-\change_inserted 67598359 1354198122
-,
-\change_unchanged
+ This work implements some well-known radio propagation models, e.g.
+ Okumura-Hata and COST 231, the later is explained in more detail in Section
  
-\change_deleted 67598359 1354198136
-(
-\change_unchanged
-e.g.
- Okumura-Hata and COST 231
-\change_inserted 258802063 1354030312
-, the later is explained in more detail in 
-\change_deleted 67598359 1354198184
-s
-\change_inserted 67598359 1354198184
-S
-\change_inserted 258802063 1354030312
-ection 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:COST-231-model"
 
 \end_inset
 
-
-\change_deleted 258802063 1354030189
-)
-\change_unchanged
 .
  Regarding the accuracy of the predicted values, the authors report comparable
  results to those of a state-of-the-art commercial tool.
- 
-\change_deleted 258802063 1354030370
-Hence
-\change_inserted 258802063 1354030374
-Therefore
-\change_unchanged
-, we 
-\change_deleted 258802063 1354030416
-decided to use this work
-\change_inserted 258802063 1354030546
-use the implementation developed by 
+ Therefore, we use the implementation developed by 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ozimek_Open.source.radio.coverage.prediction:2010"
 
 \end_inset
 
-
-\change_unchanged
- as 
-\change_inserted 258802063 1354030488
-the
-\change_deleted 258802063 1354030487
-a
-\change_unchanged
- reference implementation for PRATO.
-
-\change_inserted 67598359 1354198477
+ as the reference implementation for PRATO.
  Furthermore, to ensure that our implementation is completely compliant
  with the afore-mentioned reference, we have designed a comparison test
  that consists of running both the reference and PRATO with the same input
  parameters.
  The test results from PRATO and the reference implementation are identical.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 67598359 1354198502
-to
-\change_deleted 258802063 1354030566
-To
-\change_deleted 67598359 1354198502
- ensure that our implementation is completely compliant with the above-mentioned
- reference, we have designed a comparison test
-\change_deleted 258802063 1354030583
-.
- It
-\change_deleted 67598359 1354198502
- that consists of running both the reference and 
-\change_deleted 258802063 1354030709
-our implementation
-\change_deleted 67598359 1354198502
-PRATO with the same input parameters.
- The test results from Prato and the reference implementation are identical.
-\change_inserted 258802063 1354030744
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 258802063 1354030744
 , hence resulting in two raster maps, one for each of the implementations.
  Using the GRASS built-in module 
 \begin_inset Formula $r.mapcalc$
@@ -1151,8 +869,6 @@ tested_map
 \noindent
 \align left
 
-\change_inserted 258802063 1354030744
-
 \family typewriter
 $ r.mapcalc diff=reference_map-tested_map
 \begin_inset Newline newline
@@ -1171,58 +887,10 @@ $ r.info diff
 \end_inset
 
 ...
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_deleted 258802063 1354030744
-, hence resulting in two raster maps, one for each of the implementations.
- Using the GRASS built-in module 
-\begin_inset Formula $r.mapcalc$
-\end_inset
-
-, we calculate the arithmetic difference on every point of both raster maps.
- The resulting difference map should contain a raster grid with all its
- values set to zero for the test case to be successful.
- The following example shows a successful test, where 
-\family typewriter
-reference_map
-\family default
- is the result of the reference implementation and 
-\family typewriter
-tested_map
-\family default
- is the result of our implementation:
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align left
-
-\change_deleted 258802063 1354030744
-
-\family typewriter
-$ r.mapcalc diff=reference_map-tested_map
-\begin_inset Newline newline
-\end_inset
-
-$ r.info diff
-\begin_inset Newline newline
-\end_inset
-
-...
-\begin_inset Newline newline
-\end_inset
-
-| Range of data: min = 0 max = 0 |
-\begin_inset Newline newline
-\end_inset
-
-...
-\change_unchanged
 
 \end_layout
 
@@ -1384,17 +1052,7 @@ PL_{\textrm{NLOS}}(d)=L_{0}+L_{\textrm{RTS}}+L_{\textrm{MSD}}+L_{\textrm{CLUT}}.
 \end_layout
 
 \begin_layout Subsection
-GRASS G
-\change_inserted 258802063 1354031813
-eographical 
-\change_unchanged
-I
-\change_inserted 258802063 1354031798
-nformation 
-\change_unchanged
-S
-\change_inserted 258802063 1354031800
-ystem
+GRASS Geographical Information System
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:GRASS-GIS"
@@ -1402,38 +1060,19 @@ name "sub:GRASS-GIS"
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-As the target 
-\change_inserted 258802063 1354748315
-software 
-\change_unchanged
-environment 
-\change_inserted 258802063 1354748327
-for PRATO 
-\change_unchanged
-we have chosen the GRASS
-\change_inserted 258802063 1354031875
- (Geographic Resources Analysis Support System)
-\change_deleted 258802063 1354031907
- open source system 
-\change_unchanged
-
+As the target software environment for PRATO we have chosen GRASS (Geographic
+ Resources Analysis Support System) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "neteler2002:GRASS_GIS"
 
 \end_inset
 
-
-\change_inserted 258802063 1354748554
 , which is a free and open-source software (FOSS) project that implements
- a Geographical Information System (GIS)
-\change_unchanged
-.
+ a Geographical Information System (GIS).
  This GIS software was originally developed at the US Army Construction
  Engineering Research Laboratories and is a full-featured system with a
  wide range of analytical, data-management, and visualization capabilities.
@@ -1454,11 +1093,7 @@ key "Stallman_GNU_License:1991"
 
 \end_inset
 
-
-\change_inserted 258802063 1354748592
- 
-\change_unchanged
-and imposes the availability of the source code.
+ and imposes the availability of the source code.
  This allows us to make potential modifications to the system, thus adapting
  it for the parallel computation environment.
  Moreover, being an open system, GRASS provided us with a great deal of
@@ -1487,18 +1122,15 @@ Design of the serial version
 \begin_layout Standard
 This section describes the different functions contained in the serial version
  of PRATO, which is implemented as a GRASS module.
- Their connections and data flow are depicted in Figure 
+ Their connections and data flow are depicted in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:serial_version_flow_diagram"
 
 \end_inset
 
-, where the parallelograms 
-\change_inserted 258802063 1354748620
-in the flow diagram 
-\change_unchanged
-represent input/output (I/O) operations.
+, where the parallelograms in the flow diagram represent input/output (I/O)
+ operations.
  
 \end_layout
 
@@ -1514,32 +1146,17 @@ key "Ozimek_Open.source.radio.coverage.prediction:2010"
 
 , but with some essential differences.
  Specifically, we have decided to avoid the modular design to prevent the
- overhead of I/O operations, 
-\change_deleted 258802063 1354748649
-which communicate
-\change_inserted 258802063 1354748656
-for communicating
-\change_unchanged
- data between the components of the modular architecture.
+ overhead of I/O operations for communicating data between the components
+ of the modular architecture.
  Instead, we have chosen a monolithic design, in which all the steps for
  generating the radio coverage prediction are calculated inside one GRASS
  module.
- Regarding
-\change_deleted 258802063 1354748684
- the 
-\change_inserted 258802063 1354748686
- 
-\change_unchanged
-the way results are saved, our approach employs a direct connection to an
- external database server, instead of the slow built-in GRASS database drivers.
+ Regarding the way results are saved, our approach employs a direct connection
+ to an external database server, instead of the slow built-in GRASS database
+ drivers.
  To explicitly avoid tight coupling with a specific database vendor, the
- generated output is formatted in plain text, which is
-\change_deleted 258802063 1354748701
- simply
-\change_inserted 258802063 1354748704
- then
-\change_unchanged
- forwarded to the database server.
+ generated output is formatted in plain text, which is then forwarded to
+ the database server.
  Any further processing is achieved by issuing a query over the database
  tables that contain the partial results for each of the processed transmitters.
 \end_layout
@@ -1569,7 +1186,7 @@ centering
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/serial_implementation_flow_diagram.eps
-	width 65col%
+	width 67col%
 
 \end_inset
 
@@ -1622,9 +1239,9 @@ Read input data
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:serial_version_flow_diagram"
 
 \end_inset
@@ -1658,9 +1275,9 @@ s.
 
 \begin_layout Standard
 The INI file is split into two sections: common and transmitter-specific.
- An example INI file is given in Figure 
+ An example INI file is given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:INI_file"
 
 \end_inset
@@ -1753,11 +1370,7 @@ radius = 20 ; calculation radius around a transmitter (in km)
 
 \family typewriter
 \size tiny
-antennaDirectory = ~/
-\change_deleted 67598359 1354198848
-r.coverage/
-\change_unchanged
-antenna ; directory containing antenna files
+antennaDirectory = ~/antenna ; directory containing antenna files
 \end_layout
 
 \begin_layout Plain Layout
@@ -1865,12 +1478,8 @@ power = 30.2 ; transmitter pilot power in dBm
 
 \emph on
 Example of an INI file, containing input parameters for a module execution.
-
-\change_inserted 258802063 1354034039
  Comments in an INI file start with the semicolon character and extend to
  the end of the text line.
-\change_unchanged
-
 \emph default
 
 \begin_inset CommandInset label
@@ -1916,9 +1525,9 @@ transmission radius
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:serial_version_flow_diagram"
 
 \end_inset
@@ -1933,9 +1542,9 @@ Calculate LOS/NLOS
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:serial_version_flow_diagram"
 
 \end_inset
@@ -1986,9 +1595,9 @@ Apply COST-231, NLOS
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:serial_version_flow_diagram"
 
 \end_inset
@@ -1997,9 +1606,8 @@ reference "fig:serial_version_flow_diagram"
 \end_layout
 
 \begin_layout Standard
-Figure 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:path_loss-example"
 
 \end_inset
@@ -2093,9 +1701,9 @@ Calculate antenna influence
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:serial_version_flow_diagram"
 
 \end_inset
@@ -2106,25 +1714,25 @@ reference "fig:serial_version_flow_diagram"
 \family typewriter
 antennaFile
 \family default
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:INI_file"
 
 \end_inset
 
 ), including beam direction, electrical and mechanical tilt.
- Figure 
+ 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:antenna-example"
 
 \end_inset
 
  shows a portion of a raster map, where this calculation step has been applied
- to the results from Figure 
+ to the results from 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:path_loss-example"
 
 \end_inset
@@ -2214,9 +1822,9 @@ Save transmitter path-loss to DB
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:serial_version_flow_diagram"
 
 \end_inset
@@ -2240,51 +1848,36 @@ reference "fig:serial_version_flow_diagram"
 \align left
 
 \family typewriter
-$ r.
-\change_deleted 67598359 1354198649
-coverage
-\change_inserted 67598359 1354198650
-prato
-\change_unchanged
- ini_file=./parameters.ini tx_ini_section=TX_1 | psql -h server_name -U usr_name
- db_name
+\size scriptsize
+$ r.prato ini_file=./parameters.ini tx_ini_section=TX_1 | psql -h server_name
+ -U usr_name db_name
+\size default
+
 \begin_inset Newline newline
 \end_inset
 
-
-\change_inserted 258802063 1354039867
 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 258802063 1354039967
 Do you think that changing the name of the module from r.coverage to prato.coverag
 e or just prato might make more clear that this is the PRATO application
  and not something else?
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
 \begin_layout Standard
 \noindent
 Here, 
-\change_inserted 67598359 1354198731
-
 \family typewriter
 r.prato
 \family default
  is the GRASS module implementing PRATO, 
-\change_unchanged
-
 \family typewriter
 ini_file
 \family default
@@ -2322,11 +1915,8 @@ name "sub:Final-coverage-prediction"
 
 \begin_layout Standard
 The final radio coverage prediction, containing an aggregation of the partial
- 
-\change_inserted 67598359 1354199641
-path-loss 
-\change_unchanged
-predictions of the involved transmitters, is created in this step (
+ path-loss predictions of the involved transmitters, is created in this
+ step (
 \begin_inset Quotes eld
 \end_inset
 
@@ -2334,9 +1924,9 @@ Create final coverage prediction
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:serial_version_flow_diagram"
 
 \end_inset
@@ -2363,27 +1953,21 @@ Finally, the output raster is generated, using the GRASS built-in modules
 , which create a raster map using the results of the above-mentioned query
  as input.
  The raster map contains the maximum received signal strength for each individua
-l point, as shown in Figure 
+l point, as shown in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:output_raster_example"
 
 \end_inset
 
 .
  In this case, the color scale is given in dBm, indicating the received
- signal 
-\change_deleted 67598359 1354204219
-strenght
-\change_inserted 67598359 1354204219
-strength
-\change_unchanged
- from the transmitters.
+ signal strength from the transmitters.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-wide false
+wide true
 sideways false
 status open
 
@@ -2407,7 +1991,7 @@ centering
 \begin_inset Graphics
 	filename img/final_coverage.png
 	lyxscale 30
-	width 100col%
+	width 120col%
 
 \end_inset
 
@@ -2421,6 +2005,11 @@ centering
 
 \shape italic
 Example of raster map, displaying the final coverage prediction.
+ The color scale is given in 
+\emph on
+dBm
+\emph default
+, indicating the received signal strength.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:output_raster_example"
@@ -2441,14 +2030,10 @@ name "fig:output_raster_example"
 \end_layout
 
 \begin_layout Subsection
-
-\change_inserted 258802063 1354740536
 Multi-paradigm parallel programming
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258802063 1354740536
 The implementation methodology adopted for PRATO follows a multi-paradigm
  parallel programming approach in order to fully use the resources of a
  computing cluster.
@@ -2468,14 +2053,12 @@ key "Butenhof_Programming.with.POSIX.threads:1997"
  For instance, an application using POSIX threads can: execute multiple
  threads in parallel by using the cores of multi-core processor, or use
  the system resources more effectively by avoiding process execution-halt
- due to I/O latency by using one thread for computing while a second threads
+ due to I/O latency by using one thread for computing while a second thread
  waits for an I/O operation to complete.
  
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258802063 1354740536
 To use the computing resources of a distributed memory system, such as a
  cluster of processors, PRATO uses the Message Passing Interface or MPI
  
@@ -2497,8 +2080,6 @@ key "Gropp_Using_MPI:1999"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258802063 1354740536
 In order to make the text more clear and to differentiate between the programmin
 g paradigms used from here on we will refer to a POSIX thread simply as
  a `thread' and a MPI proccess as a `process'.
@@ -2506,16 +2087,12 @@ g paradigms used from here on we will refer to a POSIX thread simply as
 
 \begin_layout Subsection
 Design of the parallel version
-\change_inserted 258802063 1354114521
-
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Design-parallel"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -2578,29 +2155,16 @@ name "sub:Master-process"
 \begin_layout Standard
 As it has been suggested before, the parallel version of PRATO follows a
  master-worker model.
- The master process, for which the flow diagram is given in Figure 
+ The master process, for which the flow diagram is given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
 
 , is the only component that should be run from within the GRASS environment.
- As soon as 
-\change_inserted 258802063 1354034161
-the master process
-\change_deleted 258802063 1354034156
-it
-\change_unchanged
- starts, the input parameters are read
-\change_inserted 258802063 1354034181
-,
-\change_deleted 258802063 1354034180
- (
-\change_inserted 258802063 1354034198
- this step corresponds to 
-\change_unchanged
-
+ As soon as the master process starts, the input parameters are read, this
+ step corresponds to 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2608,46 +2172,18 @@ Read input data
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
 
-
-\change_deleted 258802063 1354034202
-)
-\change_unchanged
 .
- 
-\change_inserted 258802063 1354034234
-The reading of the input parameters 
-\change_deleted 258802063 1354034236
-This 
-\change_unchanged
-is done in a similar way as in the serial version.
- In the next step, 
-\change_deleted 258802063 1354034254
-it
-\change_inserted 258802063 1354034259
-the master process
-\change_unchanged
- dynamically initiates the worker processes 
-\change_deleted 258802063 1354034426
-in
-\change_unchanged
- 
-\change_inserted 258802063 1354034430
-using the available
-\change_deleted 258802063 1354034418
-the
-\change_unchanged
- computing nodes (
-\change_inserted 258802063 1354034286
-see the 
-\change_unchanged
-
+ The reading of the input parameters is done in a similar way as in the
+ serial version.
+ In the next step, the master process dynamically initiates the worker processes
+ using the available computing nodes (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2655,76 +2191,25 @@ Dynamic worker-process spawning
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354034290
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
 
-), 
-\change_inserted 258802063 1354034305
-and 
-\change_unchanged
-tak
-\change_inserted 258802063 1354034311
-es
-\change_deleted 258802063 1354034310
-ing
-\change_unchanged
- into account the amount of transmitters for which the coverage prediction
- should be calculated.
- 
-\change_inserted 258802063 1354034464
-In other words, 
-\change_deleted 258802063 1354034464
-T
-\change_inserted 258802063 1354034466
-t
-\change_unchanged
-his means that master
-\change_inserted 258802063 1354034478
- process
-\change_unchanged
- never starts more worker processes than the number of transmitters to be
- processed.
- 
-\change_inserted 258802063 1354034649
-However, most often there are more transmitters than available computing
+), and takes into account the amount of transmitters for which the coverage
+ prediction should be calculated.
+ In other words, this means that master process never starts more worker
+ processes than the number of transmitters to be processed.
+ However, most often there are more transmitters than available computing
  nodes, therefore, the master process can assign several transmitters to
- each of the worker process
-\change_inserted 67598359 1354199019
-es
-\change_inserted 258802063 1354034649
-.
-\change_deleted 258802063 1354034562
-The opposite is clearly possible.
-
-\change_unchanged
- 
-\change_inserted 258802063 1354034699
-For distributing the work among the worker processes, 
-\change_deleted 258802063 1354034699
-T
-\change_inserted 258802063 1354034701
-t
-\change_unchanged
-he master process then proceeds to decompose the loaded raster data into
- arrays of basic-data-type elements, e.g.
+ each of the worker processes.
+ For distributing the work among the worker processes, the master process
+ then proceeds to decompose the loaded raster data into arrays of basic-data-typ
+e elements, e.g.
  floats or doubles, before dispatching them to the multiple worker processes
- (
-\change_inserted 258802063 1354034725
-see
-\change_inserted 67598359 1354199042
- the
-\change_inserted 258802063 1354034725
- 
-\change_unchanged
-
+ (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2732,35 +2217,18 @@ Input data broadcasting
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354034733
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
 
 ).
- 
-\change_deleted 258802063 1354034771
-This decomposition
-\change_inserted 258802063 1354034777
-The decomposition of the data
-\change_unchanged
- applies to the digital-elevation and the clutter data only.
+ The decomposition of the data applies to the digital-elevation and the
+ clutter data only.
  In the next step, the master process starts a message-driven processing
- loop (
-\change_inserted 258802063 1354034794
-see
-\change_inserted 67598359 1354199059
- the
-\change_inserted 258802063 1354034794
- 
-\change_unchanged
-
+ loop (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2768,22 +2236,14 @@ Processing loop
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354034797
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
 
-), which main task is to 
-\change_inserted 258802063 1354034837
-assign and 
-\change_unchanged
-distribute the calculation work, i.e.
+), which main task is to assign and distribute the calculation work, i.e.
  the configuration data of the different transmitters, among idle worker
  processes.
 \end_layout
@@ -2814,7 +2274,7 @@ centering
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/master_process_flow_diagram.eps
-	width 35col%
+	width 40col%
 
 \end_inset
 
@@ -2848,70 +2308,27 @@ name "fig:master_process"
 \end_layout
 
 \begin_layout Standard
-The flow diagram shown in Figure 
+The flow diagram shown in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:processing_loop_in_master_process"
 
 \end_inset
 
- depicts 
-\change_inserted 258802063 1354034879
-in more detail 
-\change_unchanged
-the steps inside the 
-\change_inserted 258802063 1354035032
-
+ depicts in more detail the steps inside the 
 \begin_inset Quotes eld
 \end_inset
 
-
-\change_deleted 67598359 1354199087
-p
-\change_inserted 67598359 1354199087
-P
-\change_unchanged
-rocessing loop
-\change_inserted 258802063 1354035035
-
+Processing loop
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_unchanged
- 
-\change_inserted 67598359 1354199091
-step 
-\change_unchanged
-of the master process.
- 
-\change_deleted 258802063 1354034955
-It
-\change_inserted 258802063 1354034964
-In the processing loop, the master process
-\change_unchanged
- starts by checking which worker processes are 
-\change_deleted 258802063 1354034975
-still running
-\change_inserted 258802063 1354034980
-available
-\change_unchanged
-, so that they may calculate the radio coverage prediction for the next
- transmitter.
+ step of the master process.
+ In the processing loop, the master process starts by checking which worker
+ processes are available, so that they may calculate the radio coverage
+ prediction for the next transmitter.
  It is worth pointing out that this step also serves as a stopping condition
- for the processing loop itself (
-\change_deleted 67598359 1354199117
-S
-\change_inserted 67598359 1354199117
-s
-\change_inserted 258802063 1354035008
-ee
-\change_inserted 67598359 1354199119
- the
-\change_inserted 258802063 1354035008
- 
-\change_unchanged
-
+ for the processing loop itself (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2919,33 +2336,16 @@ Any worker still on?
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354035011
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:processing_loop_in_master_process"
 
 \end_inset
 
 ).
- The active worker processes inform master they are ready to 
-\change_deleted 67598359 1354199202
-process
-\change_inserted 67598359 1354199203
-compute
-\change_unchanged
- by sending an idle message (
-\change_inserted 258802063 1354035073
-see
-\change_inserted 67598359 1354199211
- the
-\change_inserted 258802063 1354035073
- 
-\change_unchanged
-
+ The active worker processes inform master they are ready to compute by
+ sending an idle message (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2953,13 +2353,9 @@ Wait for idle worker
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354035077
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:processing_loop_in_master_process"
 
 \end_inset
@@ -2967,13 +2363,7 @@ reference "fig:processing_loop_in_master_process"
 ).
  The master process then announces the idle worker process it is about to
  receive new data for the next calculation, and it dispatches the complete
- configuration of the transmitter to be processed (
-\change_inserted 258802063 1354035094
-see 
-\change_inserted 67598359 1354199224
-the 
-\change_unchanged
-
+ configuration of the transmitter to be processed (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2989,28 +2379,16 @@ Send transmitter data
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354035099
- steps
-\change_unchanged
-, respectively, in Figure 
+ steps, respectively, in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:processing_loop_in_master_process"
 
 \end_inset
 
 ).
  This is only done if there are still transmitters, for which the coverage
- prediction has yet to be calculated (
-\change_inserted 258802063 1354035716
-see
-\change_inserted 67598359 1354199234
- the
-\change_inserted 258802063 1354035716
- 
-\change_unchanged
-
+ prediction has yet to be calculated (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3018,13 +2396,9 @@ Any transmitters left?
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354035721
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:processing_loop_in_master_process"
 
 \end_inset
@@ -3036,15 +2410,7 @@ reference "fig:processing_loop_in_master_process"
  assigned by the master process.
  When there are no more transmitters left, all the worker processes announcing
  they are idle will receive a shutdown message from the master process,
- indicating them to stop running (
-\change_inserted 258802063 1354035730
-see
-\change_inserted 67598359 1354199243
- the
-\change_inserted 258802063 1354035730
- 
-\change_unchanged
-
+ indicating them to stop running (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3052,28 +2418,16 @@ Send stop message
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354035733
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:processing_loop_in_master_process"
 
 \end_inset
 
 ).
  The master process will keep doing this until all worker processes have
- finished (
-\change_inserted 258802063 1354035738
-see
-\change_inserted 67598359 1354199248
- the
-\change_inserted 258802063 1354035738
- 
-\change_unchanged
-
+ finished (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3081,13 +2435,9 @@ Any worker still on?
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354035742
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:processing_loop_in_master_process"
 
 \end_inset
@@ -3120,7 +2470,7 @@ centering
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/master_processing_loop_flow_diagram.eps
-	width 75col%
+	width 85col%
 
 \end_inset
 
@@ -3134,26 +2484,14 @@ centering
 
 \shape italic
 Flow diagram of the 
-\change_inserted 258802063 1354035760
-
 \begin_inset Quotes eld
 \end_inset
 
-
-\change_deleted 67598359 1354199260
-p
-\change_inserted 67598359 1354199260
-P
-\change_unchanged
-rocessing loop
-\change_inserted 258802063 1354035772
-
+Processing loop
 \begin_inset Quotes erd
 \end_inset
 
- step
-\change_unchanged
- of the master process.
+ step of the master process.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:processing_loop_in_master_process"
@@ -3176,13 +2514,7 @@ name "fig:processing_loop_in_master_process"
 \begin_layout Standard
 Finally, the last step of the master process is devoted to creating the
  final output of the calculation, e.g.
- a raster map (
-\change_inserted 258802063 1354035797
-see 
-\change_inserted 67598359 1354199267
-the 
-\change_unchanged
-
+ a raster map (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3190,27 +2522,17 @@ Create final coverage prediction
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354035802
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
 
 ).
- The final result
-\change_inserted 67598359 1354199336
- for the coverage of all transmitters
-\change_unchanged
- is an aggregation from the individual 
-\change_inserted 67598359 1354199351
-path-loss 
-\change_unchanged
-results created by each of the worker processes during the 
+ The final result for the coverage of all transmitters is an aggregation
+ from the individual path-loss results created by each of the worker processes
+ during the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3218,25 +2540,16 @@ Processing loop
 \begin_inset Quotes erd
 \end_inset
 
- phase in Figure 
+ phase in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
 
-, which provide
-\change_inserted 258802063 1354035823
-s
-\change_unchanged
- the source data for the final raster map.
- 
-\change_inserted 67598359 1354199435
-The aggregation of the individual transmitter path-loss results 
-\change_deleted 67598359 1354199422
-This 
-\change_unchanged
-is accomplished in a similar way as in the serial version.
+, which provides the source data for the final raster map.
+ The aggregation of the individual transmitter path-loss results is accomplished
+ in a similar way as in the serial version.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3246,11 +2559,8 @@ Worker processes
 \begin_layout Standard
 An essential characteristic of the worker processes is that they are completely
  independent from GRASS, i.e.
- they do not have to run within the GRASS environment
-\change_deleted 258802063 1354040213
-,
-\change_unchanged
- nor use any of the GRASS libraries to work.
+ they do not have to run within the GRASS environment nor use any of the
+ GRASS libraries to work.
  This aspect significantly simplifies the deployment phase to run PRATO
  on a computer cluster, since no GRASS installation is needed on the computing
  nodes hosting the worker processes.
@@ -3258,30 +2568,15 @@ An essential characteristic of the worker processes is that they are completely
 
 \begin_layout Standard
 The computations of the worker processes, for which the flow diagram is
- given in Figure 
+ given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:worker_process_flow_diagram"
 
 \end_inset
 
-, are 
-\change_deleted 258802063 1354040289
-executed over arrays of basic element types, like floats or doubles, which
-\change_inserted 258802063 1354040322
- initialized by data that
-\change_deleted 67598359 1354199491
- is
-\change_unchanged
- are received from the master process at initialization time (
-\change_inserted 258802063 1354040331
-see
-\change_inserted 67598359 1354199499
- the
-\change_inserted 258802063 1354040331
- 
-\change_unchanged
-
+, are initialized by data that are received from the master process at initializ
+ation time (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3289,49 +2584,18 @@ Receive broadcasted data
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354040335
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:worker_process_flow_diagram"
 
 \end_inset
 
 ).
- 
-\change_deleted 258802063 1354040371
-Moreover,
-\change_inserted 258802063 1354040717
-It is important to note that the received data contain
-\change_deleted 67598359 1354199513
-s
-\change_inserted 258802063 1354040717
- 
-\change_deleted 67598359 1354199528
-all
-\change_inserted 67598359 1354199529
-the
-\change_inserted 258802063 1354040717
- transmitter and terrain
-\change_inserted 67598359 1354199537
--profile
-\change_inserted 258802063 1354040717
- information which is
-\change_deleted 67598359 1354199487
- 
-\change_deleted 258802063 1354040544
- these data are 
-\change_unchanged
-common to all the coverage-prediction calculations, 
-\change_inserted 258802063 1354040736
-therefore 
-\change_deleted 258802063 1354040761
-thus
-\change_unchanged
- making each worker process capable of processing any given transmitter.
+ It is important to note that the received data contain the transmitter
+ and terrain-profile information which iscommon to all the coverage-prediction
+ calculations, therefore making each worker process capable of processing
+ any given transmitter.
 \end_layout
 
 \begin_layout Standard
@@ -3356,175 +2620,35 @@ key "Blazek_GRASS_server:2004"
 \end_layout
 
 \begin_layout Standard
-Because concurrent access to data within GRASS 
-\change_inserted 258802063 1354040822
-by multiple processes 
-\change_deleted 258802063 1354040777
-sh
-\change_inserted 258802063 1354040779
-y
-\change_unchanged
-ields undefined behavior, i.e.
+Because concurrent access to data within GRASS by multiple processes yields
+ undefined behavior, i.e.
  it is not thread-safe, the results generated by the worker processes cannot
  be directly saved into the GRASS data set.
- One possible solution would be to save
-\change_deleted 258802063 1354040848
- them
-\change_inserted 258802063 1354040869
- the transmitter 
-\change_deleted 67598359 1354199572
-coverage
-\change_inserted 67598359 1354199574
-path-loss
-\change_inserted 258802063 1354040869
- prediction result
-\change_unchanged
- through the master process, thus avoiding concurrent access.
- 
-\change_deleted 258802063 1354040900
-But
-\change_inserted 258802063 1354040904
-However,
-\change_unchanged
- sending intermediate results back to the master process from the workers
- would represent a major bottleneck for the scalability of the parallel
- version, since the results
-\change_deleted 258802063 1354040943
-,
-\change_unchanged
- generated by a parallel computation
-\change_deleted 258802063 1354040946
-,
-\change_unchanged
- would have to be serially processed by the master process alone.
+ One possible solution would be to save the transmitter path-loss prediction
+ result through the master process, thus avoiding concurrent access.
+ However, sending intermediate results back to the master process from the
+ workers would represent a major bottleneck for the scalability of the parallel
+ version, since the results generated by a parallel computation would have
+ to be serially processed by the master process alone.
  Instead, our approach allows each of the worker processes to output its
  results into an external database server, following an asynchronous and
  decoupled design.
- 
-\change_deleted 258802063 1354040970
-The
-\change_inserted 258802063 1354040980
-Each of the transmitter 
-\change_deleted 67598359 1354199677
-coverage
-\change_inserted 67598359 1354199678
-path-loss
-\change_inserted 258802063 1354040980
- prediction
-\change_unchanged
- results are saved in separate tables, following a similar design as the
- serial version.
- Moreover, worker processes do this from an independent 
-\change_inserted 67598359 1354199695
-POSIX 
-\change_unchanged
-thread, 
-\change_inserted 258802063 1354041091
-which 
-\change_unchanged
-run
-\change_inserted 258802063 1354041096
-s
-\change_deleted 258802063 1354041095
-ning
-\change_unchanged
+ Each of the transmitter path-loss prediction results are saved in separate
+ tables, following a similar design as the serial version.
+ Moreover, worker processes do this from an independent thread, which runs
  concurrently with the calculation of the next transmitter received from
  the master process.
- When compared to the serial version, 
-\change_deleted 258802063 1354041130
-this approach
-\change_inserted 258802063 1354041180
-the overlap between calculation and communication achieved by the use of
- an auxiliary 
-\change_deleted 67598359 1354199715
-OpenMP
-\change_inserted 67598359 1354199716
-POSIX
-\change_inserted 258802063 1354041180
- thread
-\change_unchanged
- completely hides the latency created by the result dumping task
-\change_inserted 67598359 1354199728
-,
-\change_inserted 258802063 1354041199
- and make
-\change_inserted 67598359 1354199733
-s
-\change_inserted 258802063 1354041199
- better use of the system resources
-\change_deleted 258802063 1354740668
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Butenhof_Programming.with.POSIX.threads:1997"
-
-\end_inset
-
-
-\change_unchanged
-.
+ When compared to the serial version, the overlap between calculation and
+ communication achieved by the use of an auxiliary thread completely hides
+ the latency created by the result dumping task, and makes better use of
+ the system resources.
 \end_layout
 
 \begin_layout Standard
-After the broadcasted data are received
-\change_inserted 258802063 1354748825
- by all the worker processes
-\change_unchanged
-, 
-\change_deleted 258802063 1354041241
-the
-\change_inserted 258802063 1354041242
-each
-\change_unchanged
- worker process 
-\change_deleted 67598359 1354204253
-proceeeds
-\change_inserted 67598359 1354204253
-proceeds
-\change_inserted 258802063 1354041234
- to 
-\change_unchanged
-inform
-\change_deleted 258802063 1354041236
-s
-\change_unchanged
- the master process 
-\change_inserted 258802063 1354041252
-that 
-\change_unchanged
-it is
-\change_deleted 258802063 1354041261
- idle and
-\change_unchanged
- ready
-\change_inserted 258802063 1354041291
- (in an idle state)
-\change_unchanged
- to receive 
-\change_inserted 258802063 1354041350
-the 
-\change_unchanged
-transmitter-configuration data
-\change_inserted 258802063 1354041340
- that defines which transmitter 
-\change_deleted 67598359 1354199937
-coverage
-\change_inserted 67598359 1354199938
-path-loss
-\change_inserted 258802063 1354041340
- prediction to perform
-\change_deleted 258802063 1354041370
- for the next coverage prediction
-\change_unchanged
- (
-\change_inserted 258802063 1354041373
-see
-\change_inserted 67598359 1354199945
- the
-\change_inserted 258802063 1354041373
- 
-\change_unchanged
-
+After the broadcasted data are received by all the worker processes, each
+ worker process proceeds to inform the master process that it is ready (in
+ an idle state) to receive the transmitter-configuration data that defines
+ which transmitter path-loss prediction to perform (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3532,35 +2656,15 @@ Send idle message
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354041377
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:worker_process_flow_diagram"
 
 \end_inset
 
 ).
- If 
-\change_inserted 258802063 1354041381
-the 
-\change_unchanged
-master
-\change_inserted 258802063 1354041383
- process
-\change_unchanged
- does not instruct to stop processing (
-\change_inserted 258802063 1354041392
-see
-\change_inserted 67598359 1354199956
- the
-\change_inserted 258802063 1354041392
- 
-\change_unchanged
-
+ If the master process does not instruct to stop processing (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3568,26 +2672,15 @@ Has stop message arrived?
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354041396
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:worker_process_flow_diagram"
 
 \end_inset
 
-), the worker process collects the transmitter configuration sent (
-\change_inserted 258802063 1354041418
-see
-\change_inserted 67598359 1354199963
- the
-\change_inserted 258802063 1354041418
+), the worker process collects the transmitter configuration sent (see the
  
-\change_unchanged
-
 \begin_inset Quotes eld
 \end_inset
 
@@ -3595,41 +2688,16 @@ Receive transmitter data
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354041422
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:worker_process_flow_diagram"
 
 \end_inset
 
 ).
- 
-\change_inserted 258802063 1354041434
-However, 
-\change_deleted 258802063 1354041435
-I
-\change_inserted 258802063 1354041437
-i
-\change_unchanged
-n case a stop message is received, the worker process
-\change_deleted 258802063 1354041460
- waits
-\change_inserted 258802063 1354041458
- will wait
-\change_unchanged
- for result-dumping threads to finish (
-\change_inserted 258802063 1354041465
-see
-\change_inserted 67598359 1354199979
- the
-\change_inserted 258802063 1354041465
- 
-\change_unchanged
-
+ However, in case a stop message is received, the worker process will wait
+ for result-dumping threads to finish (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3637,32 +2705,16 @@ Wait for result-dump threads
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354041469
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:worker_process_flow_diagram"
 
 \end_inset
 
-)
-\change_deleted 258802063 1354041476
-,
-\change_unchanged
- before shutting down.
+) before shutting down.
  The coverage calculation itself follows a similar design as the serial
- version (
-\change_inserted 258802063 1354041496
-see
-\change_inserted 67598359 1354199995
- the
-\change_inserted 258802063 1354041496
- 
-\change_unchanged
-
+ version (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3670,52 +2722,20 @@ Coverage calculation
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354041499
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:worker_process_flow_diagram"
 
 \end_inset
 
-)
-\change_deleted 258802063 1354041505
-,
-\change_unchanged
- and it is executed for the received transmitter
-\change_deleted 67598359 1354200017
-.
-\change_unchanged
-.
+) and it is executed for the received transmitter.
 \end_layout
 
 \begin_layout Standard
-As it was mentioned before, the worker process launches an independent
-\change_inserted 258802063 1354041568
- 
-\change_deleted 67598359 1354200033
-OpenMP
-\change_inserted 67598359 1354200034
-POSIX
-\change_unchanged
- thread to save the 
-\change_deleted 67598359 1354200041
-coverage
-\change_inserted 67598359 1354200042
-path-loss
-\change_unchanged
- prediction of the target transmitter to a database table (
-\change_inserted 258802063 1354041539
-see
-\change_inserted 67598359 1354200047
- the
-\change_inserted 258802063 1354041539
- 
-\change_unchanged
-
+As it was mentioned before, the worker process launches an independent POSIX
+ thread to save the path-loss prediction of the target transmitter to a
+ database table (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3723,13 +2743,9 @@ Threaded save path-loss to DB
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 258802063 1354041543
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:worker_process_flow_diagram"
 
 \end_inset
@@ -3763,7 +2779,7 @@ centering
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/worker_process_flow_diagram.eps
-	width 65col%
+	width 70col%
 
 \end_inset
 
@@ -3833,38 +2849,19 @@ The first reason to implement the message-passing technique is to support
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258802063 1354042137
 A second reason for selecting a message-passing technique is related to
- the flexibility for load balancing, which is 
-\change_inserted 67598359 1354200072
-of 
-\change_inserted 258802063 1354042137
-great importance on heterogeneous cluster.
- This can be seen in Figure 
+ the flexibility for load balancing, which is of great importance on heterogeneo
+us cluster.
+ This can be seen in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:worker_process_flow_diagram"
 
 \end_inset
 
- where the master process
-\change_inserted 67598359 1354200085
-,
-\change_inserted 258802063 1354042137
- before
-\change_deleted 258802063 1354042076
-Before
-\change_unchanged
- delivering the transmitter-configuration data,
-\change_deleted 258802063 1354042099
- the master process
-\change_unchanged
- sends a message to the worker process
-\change_deleted 258802063 1354041953
-,
-\change_unchanged
- indicating that it is about to receive more work.
+ where the master process, before delivering the transmitter-configuration
+ data, sends a message to the worker process indicating that it is about
+ to receive more work.
  This a priori meaningless message has a key role in correctly supporting
  computer clusters.
  In general, there are many different ways a parallel program can execute,
@@ -3899,9 +2896,8 @@ key "Siegel_Verification_of_halting_properties_for_MPI_programs:2007"
 \end_layout
 
 \begin_layout Standard
-Figure 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_worker_communication"
 
 \end_inset
@@ -3972,37 +2968,6 @@ name "fig:master_worker_communication"
 
 \end_layout
 
-\begin_layout Subsection
-
-\change_deleted 258802063 1354740506
-The MPI framework
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 258802063 1354740506
-The implementation methodology adopted for the parallel version of the simulator
- uses the Message Passing Interface or MPI 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Gropp_Using_MPI:1999"
-
-\end_inset
-
-.
- MPI is a standardized and portable library of functions, designed to function
- on a wide variety of parallel computers, which syntax and semantics are
- defined by an open standard.
- The library allows implementing portable message-passing programs in Fortran
- and C programming languages.
- MPI was designed for high performance on both massively parallel machines
- and on workstation clusters.
- It has been developed by a broadly based committee of vendors, developers,
- and users.
-\change_unchanged
-
-\end_layout
-
 \begin_layout Section
 Simulations 
 \begin_inset CommandInset label
@@ -4020,19 +2985,10 @@ This section presents the simulations and analysis of the parallel version
  Our aim is to provide an exhaustive analysis of the performance and scalability
  of the parallel implementation in order to determine if the objectives
  of this work are fulfilled.
- 
-\change_inserted 258802063 1354042375
-The most common usage case for PRATO is to perform a radio-coverage prediction
+ The most common usage case for PRATO is to perform a radio-coverage prediction
  for multiple transmitters, therefore, a straight forward parallel decomposition
- is to divide 
-\change_inserted 67598359 1354200197
-a given problem instance 
-\change_inserted 258802063 1354042375
-by transmitter, 
-\change_deleted 258802063 1354042381
-A given problem instance is segmented by transmitter, 
-\change_unchanged
-for which each coverage prediction is calculated by a separate worker process.
+ is to divide a given problem instance by transmitter, for which each coverage
+ prediction is calculated by a separate worker process.
 \end_layout
 
 \begin_layout Standard
@@ -4094,37 +3050,11 @@ Test networks
 \begin_layout Standard
 To test the parallel performance of PRATO, we have prepared different problem
  instances that emulate real radio networks of different sizes.
- 
-\change_inserted 258802063 1354042658
-In order to create 
-\change_deleted 67598359 1354204284
-syntethic
-\change_inserted 67598359 1354204284
-synthetic
-\change_inserted 258802063 1354042658
- test data-sets with an arbitrary number of transmitters we use the data
- of a group of 10 transmitters
-\change_inserted 67598359 1354200315
-,
-\change_inserted 258802063 1354042658
- which we randomly replicate and 
-\change_deleted 67598359 1354200257
-re
-\change_inserted 258802063 1354042658
-distribute 
-\change_deleted 258802063 1354042687
-The data sets are created by randomly replicating and distributing a group
- of 10 transmitters
-\change_unchanged
- over the whole target area.
- The configuration parameters of these 10 transmitters 
-\change_deleted 67598359 1354200324
-is
-\change_inserted 67598359 1354200324
-are
-\change_unchanged
- taken from the UMTS network deployed in Slovenia by Telekom Slovenije,
- d.d.
+ In order to create synthetic test data-sets with an arbitrary number of
+ transmitters we use the data of a group of 10 transmitters, which we randomly
+ replicate and distribute over the whole target area.
+ The configuration parameters of these 10 transmitters are taken from the
+ UMTS network deployed in Slovenia by Telekom Slovenije, d.d.
  The path-loss predictions are calculated using the COST-231.
  The digital elevation model used has a resolution of 25
 \begin_inset space ~
@@ -4136,21 +3066,11 @@ m
 
 , the same as the clutter data, containing different levels of signal loss
  based on the land usage.
- For all the points within 
-\change_inserted 258802063 1354042740
-a transmission radius of 
-\change_deleted 258802063 1354042727
-the
-\change_unchanged
- 20
+ For all the points within a transmission radius of 20
 \begin_inset space ~
 \end_inset
 
-km radius around each transmitter, 
-\change_inserted 258802063 1354042764
-we assume that 
-\change_unchanged
-the receiver is positioned 1.5
+km around each transmitter, we assume that the receiver is positioned 1.5
 \begin_inset space ~
 \end_inset
 
@@ -4340,58 +3260,22 @@ Weak scalability
 
 \begin_layout Standard
 This set of simulations is meant to analyze the scalability of the parallel
- implementation in cases where
-\change_inserted 258802063 1354043109
- the workload assigned to each 
-\change_deleted 67598359 1354200408
-mpi
-\change_inserted 67598359 1354200408
-MPI
-\change_inserted 258802063 1354043109
- process (one 
-\change_deleted 67598359 1354200411
-mpi
-\change_inserted 67598359 1354200412
-MPI
-\change_inserted 258802063 1354043109
- process per processor core) remains constant as we increase the number
- of processor cores and the total size of the problem
-\change_deleted 258802063 1354043118
- the size of the problem
-\change_unchanged
-, i.e.
- the number of transmitters deployed over the target area
-\change_deleted 258802063 1354043128
-, changes with the
-\change_inserted 258802063 1354043137
- is directly proportional to the
-\change_unchanged
- number of 
-\change_inserted 258802063 1354043150
-processor cores and 
-\change_unchanged
-worker processes.
- We do this by assigning a constant number of transmitters per core
-\change_deleted 258802063 1354043200
-,
-\change_unchanged
- while increasing the number of cores hosting the worker processes.
+ implementation in cases where the workload assigned to each process (one
+ MPI process per processor core) remains constant as we increase the number
+ of processor cores and the total size of the problem, i.e.
+ the number of transmitters deployed over the target area is directly proportion
+al to the number of processor cores and worker processes.
+ We do this by assigning a constant number of transmitters per core while
+ increasing the number of cores hosting the worker processes.
  Consequently, we tackle larger radio-network instances as we increase the
  number of cores.
-
-\change_inserted 258802063 1354113126
- Here we test for the following number
-\change_inserted 67598359 1354200479
-s
-\change_inserted 258802063 1354113126
- of transmitters per worker/core: 
+ Here we test for the following numbers of transmitters per worker/core:
+ 
 \begin_inset Formula $\{5,10,20,40,80\}$
 \end_inset
 
 , and we increase the number of workers/cores from 1 to 128 in powers of
  2.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -4420,20 +3304,12 @@ reference "tab:results_weak_scaling"
 
 .
  All measurements express wall-clock times in seconds.
- Wall-clock time represents real time that elapses from the start 
-\change_inserted 258802063 1354043718
-of the master process 
-\change_unchanged
-to 
-\change_deleted 258802063 1354113139
-the end of a process
-\change_inserted 258802063 1354043730
-its end
-\change_unchanged
-, including time that passes waiting for resources to become available.
- They are plotted in Figure 
+ Wall-clock time represents real time that elapses from the start of the
+ master process to its end, including time that passes waiting for resources
+ to become available.
+ They are plotted in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:weak_scalability_time"
 
 \end_inset
@@ -5170,20 +4046,15 @@ centering
 \begin_layout Plain Layout
 
 \shape italic
-Measured wall-clock time for weak-scalability experiments
-\change_inserted 258802063 1354045176
- as shown in Table 
+Measured wall-clock time for weak-scalability experiments as shown in Table
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:results_weak_scaling"
 
 \end_inset
 
-
-\change_unchanged
 .
-
-\change_inserted 258802063 1354120652
 
 \emph on
  
@@ -5192,8 +4063,6 @@ Experiments performed assigned one MPI worker process per available core.
  The wall-clock time axis is expressed in base-10 logarithmic scale, whereas
  the axis representing the number of cores is expressed in base-2 logarithmic
  scale.
-\change_unchanged
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:weak_scalability_time"
@@ -5220,11 +4089,7 @@ The time measurements observed from the weak-scalability results show that
  Moreover, these times are almost constant for bigger problem instances,
  revealing that the achieved level of scalability gets close-to-linear as
  the amount of transmitters-per-core increases.
-
-\change_inserted 258802063 1354043809
- 
-\change_unchanged
-Certainly, the parallel version of PRATO scales especially well when challenged
+ Certainly, the parallel version of PRATO scales especially well when challenged
  with a big number of transmitters (10240 for the biggest instance) over
  128 cores.
  This fact shows PRATO would be able to calculate the radio coverage prediction
@@ -5261,7 +4126,8 @@ communication overhead grows linearly with the number of cores used.
 To confirm these arguments, we analyze the times of each of the steps taken
  by the master process relative to the total processing time.
  To this end, we have created plots for three problem instances 5, 20 and
- 80 transmitters per core, which are shown in Figures 
+ 80 transmitters per core, which are shown in Fig.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:weak_scalability_relative_time-5"
@@ -5283,36 +4149,7 @@ reference "fig:weak_scalability_relative_time-80"
 \end_inset
 
 , respectively.
- 
-\change_deleted 450331270 1354271648
-We have explicitly excluded the 
-\begin_inset Quotes eld
-\end_inset
-
-Read input data
-\begin_inset Quotes erd
-\end_inset
-
- step (see Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:master_process"
-
-\end_inset
-
-) since its time is constant for all problem instances, thus not adding
- extra information about the scalability of the parallel version itself.
- Consequently, for t
-\change_inserted 450331270 1354271648
-T
-\change_unchanged
-he relative-processing-time plots 
-\change_deleted 450331270 1354271653
-we use
-\change_inserted 450331270 1354271654
-follow
-\change_unchanged
- the formula
+ The relative-processing-time plots follow the formula
 \end_layout
 
 \begin_layout Standard
@@ -5328,9 +4165,7 @@ RT=\frac{t_{\textrm{rd}}+t_{\textrm{ps}}+t_{\textrm{db}}+t_{\textrm{pl}}+t_{\tex
 
 \begin_layout Standard
 \noindent
-where
-\change_inserted 450331270 1354271694
- 
+where 
 \begin_inset Formula $t_{\textrm{rd}}$
 \end_inset
 
@@ -5342,9 +4177,7 @@ Read input data
 \begin_inset Quotes erd
 \end_inset
 
- wall-clock time,
-\change_unchanged
- 
+ wall-clock time, 
 \begin_inset Formula $t_{\textrm{ps}}$
 \end_inset
 
@@ -5392,35 +4225,15 @@ Create final coverage prediction
 \begin_inset Quotes erd
 \end_inset
 
- step,
-\change_inserted 450331270 1354271699
- and
-\change_unchanged
- 
+ step, and 
 \begin_inset Formula $t_{\textrm{total}}$
 \end_inset
 
- is the total wall-clock processing time
-\change_deleted 450331270 1354271707
-, and 
-\begin_inset Formula $t_{\textrm{rd}}$
-\end_inset
-
- is the 
-\begin_inset Quotes eld
-\end_inset
-
-Read input data
-\begin_inset Quotes erd
-\end_inset
-
- wall-clock time
-\change_unchanged
-.
+ is the total wall-clock processing time.
  For a reference of the different steps taking part of the master process,
- see Figure 
+ see 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
@@ -5466,21 +4279,8 @@ centering
 \begin_layout Plain Layout
 
 \shape italic
-Relative times for the weak-scalability experiments
-\change_deleted 258802063 1354043842
-, considering
-\change_inserted 258802063 1354043845
- for the
-\change_unchanged
- 5 transmitters per 
-\change_inserted 258802063 1354043850
-worker/
-\change_unchanged
-core
-\change_inserted 258802063 1354043858
- case
-\change_unchanged
-.
+Relative times for the weak-scalability experiments for the 5 transmitters
+ per worker/core case.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:weak_scalability_relative_time-5"
@@ -5538,21 +4338,8 @@ centering
 \begin_layout Plain Layout
 
 \shape italic
-Relative times for the weak-scalability experiments
-\change_deleted 258802063 1354043868
-, considering
-\change_inserted 258802063 1354043873
- for the
-\change_unchanged
- 20 transmitters per 
-\change_inserted 258802063 1354043880
-worker/
-\change_unchanged
-core
-\change_inserted 258802063 1354043882
- case
-\change_unchanged
-.
+Relative times for the weak-scalability experiments for the 20 transmitters
+ per worker/core case.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:weak_scalability_relative_time-20"
@@ -5610,21 +4397,8 @@ centering
 \begin_layout Plain Layout
 
 \shape italic
-Relative times for the weak-scalability experiments
-\change_deleted 258802063 1354043895
-, considering
-\change_inserted 258802063 1354043897
- for the
-\change_unchanged
- 80 transmitters per 
-\change_inserted 258802063 1354043902
-worker/
-\change_unchanged
-core
-\change_inserted 258802063 1354043904
- case
-\change_unchanged
-.
+Relative times for the weak-scalability experiments for the 80 transmitters
+ per worker/core case.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:weak_scalability_relative_time-80"
@@ -5642,27 +4416,16 @@ name "fig:weak_scalability_relative_time-80"
 \end_inset
 
 
-\change_deleted 258802063 1354043927
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 258802063 1354043948
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 258802063 1354044154
 How does the relative plots looks like when they include the read input
  data time? The usefulness of having the relative time and the wall-clock
  time plots and table is reduced if the relative plots do not use the wall-clock
  time as reference.
  As we cannot use the walk-clock time and relative plots to compare how
  each of the program stages behave.
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -5677,11 +4440,7 @@ From the relative-times plots, we see that, as we increase the number of
  The plotted relative times show that there is no dependency between the
  relative processing times and the number of cores used, confirming the
  good weak-scalability properties noted before.
- Additionally, in all three plots we may
-\change_deleted 258802063 1354044219
- clearly see the bounce
-\change_inserted 258802063 1354044312
- observe a 
+ Additionally, in all three plots we may observe a 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5689,11 +4448,7 @@ jump
 \begin_inset Quotes erd
 \end_inset
 
- in
-\change_deleted 258802063 1354044232
- of
-\change_unchanged
- the relative time for the 
+ in the relative time for the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5701,18 +4456,8 @@ Input data broadcasting
 \begin_inset Quotes erd
 \end_inset
 
- step
-\change_inserted 258802063 1354044274
- that takes place when comparing the result
-\change_deleted 258802063 1354044246
-,
-\change_unchanged
- from 4 to 8 cores, i.e.
- from one to two computing nodes
-\change_inserted 450331270 1354276931
-,
-\change_inserted 258802063 1354044470
- as each node hosts 
+ step that takes place when comparing the result from 4 to 8 cores, i.e.
+ from one to two computing nodes, as each node hosts 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5728,12 +4473,8 @@ Input data broadcasting
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_unchanged
 .
  This 
-\change_inserted 258802063 1354044299
-
 \begin_inset Quotes eld
 \end_inset
 
@@ -5741,130 +4482,12 @@ jump
 \begin_inset Quotes erd
 \end_inset
 
- 
-\change_unchanged
-is due to the use of network communication 
-\change_deleted 258802063 1354044338
-for
-\change_inserted 258802063 1354044340
-when
-\change_unchanged
- more than one computing node 
-\change_deleted 450331270 1354277011
-hosting the worker processes
-\change_inserted 258802063 1354044350
- participate
-\change_inserted 450331270 1354277019
-s in the parallel processing
-\change_unchanged
-.
- 
-\change_deleted 258802063 1354044506
-Moreover,
-\change_inserted 258802063 1354044519
-In 
-\change_deleted 67598359 1354204291
-adition
-\change_inserted 67598359 1354204291
-addition
-\change_inserted 258802063 1354044519
-,
-\change_unchanged
- we may 
-\change_inserted 258802063 1354044551
-also 
-\change_unchanged
-conclude that the network infrastructure has not been saturated with the
- data-passing load, since the relative times for input-data broadcasting
- do not grow exponentially 
-\change_deleted 258802063 1354044608
-for
-\change_inserted 258802063 1354044611
-from
-\change_unchanged
- 8 
-\change_inserted 258802063 1354044617
-cores onward.
-\change_deleted 258802063 1354044622
-and more cores.
-
-\change_unchanged
+ is due to the use of network communication when more than one computing
+ node participates in the parallel processing.
+ In addition, we may also conclude that the network infrastructure has not
+ been saturated with the data-passing load, since the relative times for
+ input-data broadcasting do not grow exponentially from 8 cores onward.
  Regarding the 
-\change_deleted 258802063 1354044648
-final
-\change_inserted 258802063 1354044661
- 
-\begin_inset Quotes eld
-\end_inset
-
-Create final
-\change_unchanged
- coverage prediction
-\change_inserted 258802063 1354044667
-
-\begin_inset Quotes erd
-\end_inset
-
- step
-\change_deleted 258802063 1354044670
- creation
-\change_unchanged
-, we may see that 
-\change_inserted 258802063 1354044850
-as we increase the number of cores 
-\change_unchanged
-the relative times grow proportionally for 
-\change_inserted 450331270 1354277108
-all three 
-\change_unchanged
-problem sizes
-\change_inserted 450331270 1354277120
-.
-
-\change_deleted 450331270 1354277115
- 20 and 80 transmitters per core (see Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:weak_scalability_relative_time-20"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:weak_scalability_relative_time-80"
-
-\end_inset
-
- respectively)
-\change_deleted 67598359 1354200809
-,
-\change_deleted 450331270 1354277115
-.
-
-\change_deleted 258802063 1354044865
- whereas
-\change_deleted 450331270 1354277115
- 
-\change_deleted 67598359 1354200813
-i
-\change_deleted 450331270 1354277115
-In contrast, for the instance with 5 transmitters per core (see Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:weak_scalability_relative_time-5"
-
-\end_inset
-
-)
-\change_deleted 258802063 1354044884
-,
-\change_deleted 450331270 1354277115
- the time spent 
-\change_deleted 67598359 1354200825
-in
-\change_deleted 450331270 1354277115
-during the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5872,36 +4495,20 @@ Create final coverage prediction
 \begin_inset Quotes erd
 \end_inset
 
- step remains almost constant when comparing different number of cores
-\change_deleted 258802063 1354044983
-they are almost constant
-\change_deleted 450331270 1354277115
-.
- This is directly related to the time the database server takes to aggregate
- the partial path-loss predictions, for which the number of database tables
- grows with the problem size as expected.
-\change_inserted 258802063 1354045081
-
+ step, we may see that as we increase the number of cores the relative times
+ grow proportionally for all three problem sizes.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258802063 1354045086
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 258802063 1354045103
 The idea in this last point is not clear, can you elaborate?
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -5917,29 +4524,16 @@ name "sub:Strong-scalability"
 \end_layout
 
 \begin_layout Standard
-This set of simulations is meant to analyze the impact of 
-\change_deleted 258802063 1354112771
-a changing number of transmitters per core
-\change_inserted 258802063 1354112818
- increasing the number of computing cores for a given problem size
-\change_deleted 258802063 1354112853
-.
- In other words, we test the scalability of the parallel implementation
- in cases where the size of the problem is fixed
-\change_unchanged
-, i.e.
+This set of simulations is meant to analyze the impact of increasing the
+ number of computing cores for a given problem size, i.e.
  the number of transmitters deployed over the target area does not change,
  while only the number of cores used is increased.
-
-\change_inserted 258802063 1354113093
  Here we test for the following number of transmitters: 
 \begin_inset Formula $\{64,128,256,512,1024,2048,4096\}$
 \end_inset
 
 , and we increase the number of workers/cores from 1 to 128 in powers of
  2 for each problem size.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -5957,9 +4551,9 @@ reference "tab:results_strong_scaling"
 
 .
  All times are expressed in seconds.
- These wall-clock time measurements are plotted in Figure 
+ These wall-clock time measurements are plotted in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:strong_scalability_time"
 
 \end_inset
@@ -6866,20 +5460,15 @@ centering
 \begin_layout Plain Layout
 
 \shape italic
-Measured wall-clock time for strong-scalability experiments
-\change_inserted 258802063 1354045183
- as shown in Table 
+Measured wall-clock time for strong-scalability experiments as shown in
+ Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:results_strong_scaling"
 
 \end_inset
 
-
-\change_unchanged
 .
-
-\change_inserted 258802063 1354120687
 
 \emph on
  
@@ -6888,8 +5477,6 @@ Experiments performed assigned one MPI worker process per available core.
  The wall-clock time axis is expressed in base-10 logarithmic scale, whereas
  the axis representing the number of cores is expressed in base-2 logarithmic
  scale.
-\change_unchanged
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:strong_scalability_time"
@@ -6910,26 +5497,13 @@ name "fig:strong_scalability_time"
 \end_layout
 
 \begin_layout Standard
-The time measurements show that small problem sizes per core 
-\change_deleted 258802063 1354045348
-are correlated with 
-\change_inserted 258802063 1354045366
-have 
-\change_unchanged
-a relatively large proportion of serial work and communication overhead.
+The time measurements show that small problem sizes per core have a relatively
+ large proportion of serial work and communication overhead.
  Therefore, the performance deteriorates as the number of transmitters per
- core approaches 
-\change_deleted 67598359 1354200958
-1
-\change_inserted 67598359 1354200958
-one
-\change_unchanged
-.
- 
-\change_inserted 258802063 1354114111
-It can be observed in Figure 
+ core approaches one.
+ It can be observed in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "tab:results_strong_scaling"
 
 \end_inset
@@ -6939,43 +5513,13 @@ reference "tab:results_strong_scaling"
  times tends to a flat line, i.e.
  as we increase the number of transmitters there is no reduction in compute
  time.
- 
-\change_unchanged
-This
-\change_inserted 258802063 1354114175
- idea is more clearly noted in the test with
-\change_deleted 67598359 1354200999
- 
-\change_deleted 258802063 1354114162
- fact may be deduced from the slope tilts, for which it is more significant
- with
-\change_unchanged
- smaller problem instances, e.g.
+ This idea is more clearly noted in the test with smaller problem instances,
+ e.g.
  64, 128 and 256 transmitters.
- 
-\change_deleted 258802063 1354114190
-However
-\change_inserted 258802063 1354114193
-In contrast
-\change_unchanged
-, 
-\change_inserted 258802063 1354114327
-for the problems with a number of transmitters larger than 512 
-\change_unchanged
-the relative contribution of
-\change_deleted 258802063 1354114456
- each of
-\change_unchanged
- the non-parallel steps
-\change_inserted 258802063 1354114312
- to the wall-clock time
-\change_unchanged
- is smaller
-\change_inserted 67598359 1354201033
-,
-\change_inserted 258802063 1354115219
- and a larger portion of the time is spent on computing the transmitters
- coverage in parallel (see Section 
+ In contrast, for the problems with a number of transmitters larger than
+ 512 the relative contribution of the non-parallel steps to the wall-clock
+ time is smaller, and a larger portion of the time is spent on computing
+ the transmitters coverage in parallel (see Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Design-parallel"
@@ -6985,26 +5529,12 @@ reference "sub:Design-parallel"
  for details on the steps of PRATO algorithm).
  A more detailed discussion of the reasons for the loss of parallel efficiency
  will be presented towards the end of this section.
-
-\change_deleted 258802063 1354114784
- for larger problem sizes, as a larger proportion of the input data is reused
- when calculating the coverage prediction for different transmitters.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258802063 1354119310
 In order to observe how well the application scales when compared against
- a base case, 
-\change_deleted 258802063 1354119313
-We
-\change_inserted 258802063 1354119314
-we
-\change_unchanged
- have also measured the performance of the parallel implementation in terms
- of the speed-up, which is defined as follows:
+ a base case, we have also measured the performance of the parallel implementati
+on in terms of the speed-up, which is defined as follows:
 \end_layout
 
 \begin_layout Standard
@@ -7030,95 +5560,25 @@ where
 \end_inset
 
  is the number of cores executing the worker processes.
- As the base case 
-\change_inserted 258802063 1354045483
-for comparisons 
-\change_unchanged
-we have chosen the parallel implementation running on only one core
-\change_deleted 258802063 1354045499
-.
- The reason for choosing this base case and not
-\change_inserted 258802063 1354045505
- and decided against using
-\change_unchanged
- the serial implementation
-\change_deleted 258802063 1354045511
- is fair comparison
-\change_inserted 258802063 1354045734
-.
+ As the base case for comparisons we have chosen the parallel implementation
+ running on only one core and decided against using the serial implementation.
  We consider that the serial implementation is not a good base comparison
  for the parallel results as: it does not reuse resources between each transmitt
 er coverage calculation and it does not overlap I/O operations with transmitter
- computations
-\change_unchanged
-.
- 
-\change_deleted 258802063 1354119362
-Namely,
-\change_inserted 258802063 1354119369
-In practice, this means that
-\change_unchanged
- several concatenated runs of the serial version would be considerably slower
-\change_inserted 258802063 1354119424
- than the parallel but single worker implementation
-\change_unchanged
-, because 
-\change_inserted 258802063 1354119553
-the serial implementation is not able to use all of the memory bandwidth
- and computing resources simultaneously
-\change_deleted 258802063 1354119471
-it introduces a large I/O overhead
-\change_unchanged
-.
- 
-\change_inserted 258802063 1354119569
-Therefore such
-\change_deleted 258802063 1354119568
-Such
-\change_unchanged
- comparison would be entirely biased towards the parallel implementation,
- showing 
-\change_inserted 258802063 1354045764
-super-linear scaling and 
-\change_unchanged
-speed-ups which would not be real
-\change_inserted 67598359 1354201156
-,
-\change_inserted 258802063 1354045807
- as the parallel version is better equi
-\change_inserted 67598359 1354201162
-p
-\change_inserted 258802063 1354045807
-ped to make use 
-\change_inserted 67598359 1354201167
-of 
-\change_inserted 258802063 1354045807
-the system resources by means of 
-\change_deleted 67598359 1354201174
-using 
-\change_inserted 258802063 1354045807
-multiple 
-\change_deleted 67598359 1354201177
-OpenMP
-\change_inserted 67598359 1354201179
-POSIX
-\change_inserted 258802063 1354045807
- threads
-\change_unchanged
-.
+ computations.
+ In practice, this means that several concatenated runs of the serial version
+ would be considerably slower than the parallel but single worker implementation
+, because the serial implementation is not able to use all of the memory
+ bandwidth and computing resources simultaneously.
+ Therefore such comparison would be entirely biased towards the parallel
+ implementation, showing super-linear scaling and speed-ups which would
+ not be real, as the parallel version is better equipped to make use of
+ the system resources by means of multiple threads.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258802063 1354119627
-Using the speed-up metric, 
-\change_deleted 258802063 1354119631
-Linear
-\change_inserted 258802063 1354119634
-linear
-\change_unchanged
- scaling is achieved when the obtained speed-up is equal to the total number
- of processors used.
+Using the speed-up metric, linear scaling is achieved when the obtained
+ speed-up is equal to the total number of processors used.
  However, it should be noted that perfect speed-up is almost never achieved,
  due to the existence of serial stages within an algorithm and communication
  overheads of the parallel implementation 
@@ -7129,70 +5589,27 @@ key "Cruz_Particle.Flow.Simulation:2010"
 \end_inset
 
 .
-
-\change_deleted 258802063 1354119706
- Therefore, the ideal case would be for the parallel execution time to be
- inversely proportional to the number of cores.
-
-\change_unchanged
  
 \end_layout
 
 \begin_layout Standard
-Figure 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:strong_scalability_speedup"
 
 \end_inset
 
- shows the speed-up of the parallel implementation for up to 128 cores
-\change_deleted 258802063 1354119905
-,
-\change_unchanged
- 
-\change_inserted 258802063 1354119907
-(
-\change_unchanged
-running
-\change_inserted 258802063 1354119901
- one worker process per node)
-\change_unchanged
- 
-\change_deleted 258802063 1354119874
-the same number of worker processes
-\change_unchanged
-, and compares seven different problem sizes with 64, 128, 256, 512, 1024,
- 2048 and 4096 transmitters deployed over the target area.
- The
-\change_deleted 258802063 1354119937
-se
-\change_inserted 258802063 1354119956
- number of transmitters used in these
-\change_unchanged
- problem sizes are comparable to several operational radio networks that
- have already been deployed in England, e.g.
- Bedfordshire County
-\change_inserted 258802063 1354120344
- with 69 UMTS base stations
-\change_unchanged
-, Cheshire County
-\change_inserted 258802063 1354120349
- with 132 UMTS base stations
-\change_unchanged
-, Hampshire County
-\change_inserted 258802063 1354120370
- with 227 UMTS base stations
-\change_unchanged
-, West Midlands
-\change_inserted 258802063 1354120399
- with 414 UMTS base stations
-\change_unchanged
-, and Greater London Authority
-\change_inserted 258802063 1354120419
- with 1086 UMTS base stations
-\change_unchanged
- 
+ shows the speed-up of the parallel implementation for up to 128 cores (running
+ one worker process per node) , and compares seven different problem sizes
+ with 64, 128, 256, 512, 1024, 2048 and 4096 transmitters deployed over
+ the target area.
+ The number of transmitters used in these problem sizes are comparable to
+ several operational radio networks that have already been deployed in England,
+ e.g.
+ Bedfordshire County with 69 UMTS base stations, Cheshire County with 132
+ UMTS base stations, Hampshire County with 227 UMTS base stations, West
+ Midlands with 414 UMTS base stations, and Greater London Authority with
+ 1086 UMTS base stations 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Number_of_base_stations_in_England"
@@ -7200,31 +5617,9 @@ key "Number_of_base_stations_in_England"
 \end_inset
 
 .
-
-\change_inserted 258802063 1354120304
- Moreover, consider that it is common 
-\change_deleted 67598359 1354201329
-that
-\change_inserted 67598359 1354201329
-for
-\change_inserted 258802063 1354120304
- a single UMTS base station to host
-\change_deleted 67598359 1354201336
-s
-\change_inserted 258802063 1354120304
- multiple transmitters.
-
-\change_unchanged
+ Moreover, consider that it is common for a single UMTS base station to
+ host multiple transmitters.
  
-\change_deleted 258802063 1354120477
-
-\shape italic
-\emph on
-The speed-up axis is expressed in base-10 logarithmic scale, whereas the
- axis representing the number of cores is expressed in base-2 logarithmic
- scale.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -7267,21 +5662,12 @@ centering
 \shape italic
 Measured speed-up for strong-scalability experiments.
 
-\change_inserted 258802063 1354120481
-
 \emph on
  
 \emph default
-The speed-up axis is expressed in base-
-\change_deleted 450331270 1354629358
-10
-\change_inserted 450331270 1354629359
-2
-\change_inserted 258802063 1354120481
- logarithmic scale, whereas the axis representing the number of cores is
- expressed in base-2 logarithmic scale.
-\change_unchanged
-
+The speed-up axis is expressed in base-2 logarithmic scale, whereas the
+ axis representing the number of cores is expressed in base-2 logarithmic
+ scale.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:strong_scalability_speedup"
@@ -7303,35 +5689,24 @@ name "fig:strong_scalability_speedup"
 
 \begin_layout Standard
 We can see that the significant reductions in wall-clock time for large
- problem sizes shown in Figure 
+ problem sizes shown in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:strong_scalability_time"
 
 \end_inset
 
- are 
-\change_inserted 258802063 1354120733
-directly 
-\change_unchanged
-correlated with the speed-up factors shown in Figure 
+ are directly correlated with the speed-up factors shown in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:strong_scalability_speedup"
 
 \end_inset
 
 .
-\change_inserted 258802063 1354123935
-
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 258802063 1354123935
- 
-\change_unchanged
-
 \begin_inset Note Note
 status open
 
@@ -7347,32 +5722,10 @@ However, good strong scaling results greatly depend on the non-parallel
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258802063 1354124016
-To study how well 
-\change_deleted 67598359 1354201397
-does 
-\change_inserted 258802063 1354124016
-PRATO utilize
-\change_inserted 67598359 1354201398
-s
-\change_inserted 258802063 1354124016
- the available computing resources 
-\change_deleted 258802063 1354124020
-The last aspect
-\change_unchanged
- we consider
-\change_deleted 258802063 1354124026
- is
-\change_unchanged
+To study how well PRATO utilizes the available computing resources we consider
  the parallel efficiency of the implementation, i.e.
- how well the parallel implementation makes use of the available 
-\change_inserted 258802063 1354124053
-processor cores
-\change_deleted 258802063 1354124041
-resources
-\change_unchanged
-.
+ how well the parallel implementation makes use of the available processor
+ cores.
  The definition of parallel efficiency is as follows:
 \end_layout
 
@@ -7405,153 +5758,45 @@ reference "eq:speedup"
 \end_inset
 
  is the number of cores executing worker processes.
- Figure 
+ 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:strong_scalability_efficiency"
 
 \end_inset
 
- shows the parallel efficiency of the parallel implementation
-\change_inserted 258802063 1354124114
- for different problem sizes as we increase the number of processing cores
-\change_unchanged
-.
+ shows the parallel efficiency of the parallel implementation for different
+ problem sizes as we increase the number of processing cores.
  
-\change_deleted 258802063 1354124134
-
-\shape italic
-\emph on
-The parallel-efficiency axis is expressed in linear scale, whereas the axis
- representing the number of cores is expressed in base-2 logarithmic scale.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-The ideal 
-\change_inserted 258802063 1354124205
-case for a parallel application
-\change_deleted 258802063 1354124198
-situation
-\change_unchanged
- would be to utilize all available resources, in which case the parallel
- efficiency would 
-\change_inserted 258802063 1354124220
-be 
-\change_unchanged
-constantly 
-\change_deleted 258802063 1354124222
-be
-\change_inserted 258802063 1354124226
-equal to
-\change_unchanged
- 
-\change_deleted 67598359 1354201458
-1
-\change_inserted 67598359 1354201458
-one
-\change_unchanged
- as we increase the core count.
- From the plot in Figure 
+The ideal case for a parallel application would be to utilize all available
+ resources, in which case the parallel efficiency would be constantly equal
+ to one as we increase the core count.
+ From the plot in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:strong_scalability_efficiency"
 
 \end_inset
 
-, we may 
-\change_deleted 258802063 1354124256
-see
-\change_inserted 258802063 1354124259
-observe
-\change_unchanged
- that the 
-\change_inserted 258802063 1354124307
-efficiency is less than 
-\change_deleted 67598359 1354201476
-1
-\change_inserted 67598359 1354201476
-one
-\change_inserted 258802063 1354124307
-, hence the 
-\change_unchanged
-computational resources are 
-\change_deleted 67598359 1354201495
-not 
-\change_inserted 258802063 1354124332
-under utilized
-\change_deleted 258802063 1354124326
-being completely used
-\change_unchanged
-.
- In accordance to the previous analysis, 
-\change_inserted 258802063 1354124405
-the under utilization of the computing resources 
-\change_deleted 258802063 1354124400
-this
-\change_unchanged
- is more significant 
-\change_inserted 258802063 1354124373
-for the
-\change_deleted 258802063 1354124370
-in
-\change_unchanged
- smaller problem sizes, where number of 
-\change_inserted 67598359 1354201523
-assigned 
-\change_unchanged
-transmitters per core approaches 
-\change_inserted 67598359 1354201542
-one
-\change_deleted 67598359 1354201542
-1
-\change_unchanged
-.
+, we may observe that the efficiency is less than one, hence the computational
+ resources are under utilized.
+ In accordance to the previous analysis, the under utilization of the computing
+ resources is more significant for the smaller problem sizes, where number
+ of assigned transmitters per core approaches one.
  This is due to the increased relative influence introduced by serial and
  communication overheads, without which the parallel implementation would
  not be feasible.
- On the other hand, the relative 
-\change_deleted 258802063 1354124465
-weight
-\change_inserted 258802063 1354124470
-time contribution
-\change_unchanged
- of the
-\change_deleted 258802063 1354124491
-se
-\change_inserted 258802063 1354124496
- serial and communication
-\change_unchanged
- overheads is significantly reduced as the work-load per core increases.
+ On the other hand, the relative time contribution of the serial and communicati
+on overheads is significantly reduced as the work-load per core increases.
  Unsurprisingly, these results confirm what it has previously been suggested
  during the weak-scaling analysis, i.e.
  it is not worth parallelizing small problem instances over a large number
- of 
-\change_inserted 258802063 1354124549
-nodes
-\change_deleted 258802063 1354124547
-cores
-\change_unchanged
-, since the 
-\change_inserted 258802063 1354124717
-time reduction
-\change_inserted 67598359 1354201644
- due to
-\change_unchanged
- 
-\change_deleted 258802063 1354124652
-proportion of parallel
-\change_unchanged
- computations
-\change_inserted 258802063 1354124690
- that make use of the extra parallel resources
-\change_unchanged
- is surpassed by the 
-\change_inserted 258802063 1354124757
-extra parallel initialization and 
-\change_unchanged
-communication overhead.
+ of nodes, since the time reduction due to computations that make use of
+ the extra parallel resources is surpassed by the extra parallel initialization
+ and communication overhead.
 \end_layout
 
 \begin_layout Standard
@@ -7594,15 +5839,11 @@ centering
 \shape italic
 Measured parallel efficiency for strong-scalability experiments.
 
-\change_inserted 258802063 1354124138
-
 \emph on
  
 \emph default
 The parallel-efficiency axis is expressed in linear scale, whereas the axis
  representing the number of cores is expressed in base-2 logarithmic scale.
-\change_unchanged
-
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:strong_scalability_efficiency"
@@ -7623,39 +5864,12 @@ name "fig:strong_scalability_efficiency"
 \end_layout
 
 \begin_layout Standard
-Similarly as 
-\change_inserted 258802063 1354124858
-in the weak scaling test
-\change_deleted 258802063 1354124851
-before
-\change_unchanged
-, we 
-\change_deleted 258802063 1354124861
-show
-\change_inserted 258802063 1354124864
-study
-\change_unchanged
- the relative contribution of each of the steps of the master process
-\change_deleted 258802063 1354124884
-,
-\change_unchanged
- as we increase the number of cores used for a fixed problem size.
+Similarly as in the weak scaling test, we study the relative contribution
+ of each of the steps of the master process as we increase the number of
+ cores used for a fixed problem size.
+ In this case, we have created plots for four problem instances namely 64,
+ 256, 1024, and 4096 transmitters, which are shown in Fig.
  
-\change_deleted 450331270 1354277193
-Again, we have explicitly excluded the 
-\begin_inset Quotes eld
-\end_inset
-
-Read input data
-\begin_inset Quotes erd
-\end_inset
-
- step because it does not contribute any information about the scalability
- of the parallel version itself.
- 
-\change_unchanged
-In this case, we have created plots for four problem instances namely 64,
- 256, 1024, and 4096 transmitters, which are shown in Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:strong_scalability_relative_time-64"
@@ -7933,8 +6147,6 @@ name "fig:strong_scalability_relative_time-4096"
 
 \begin_layout Standard
 We may observe the non-parallel steps comprising 
-\change_inserted 450331270 1354277251
-
 \begin_inset Quotes eld
 \end_inset
 
@@ -7943,8 +6155,6 @@ Read input data
 \end_inset
 
 , 
-\change_unchanged
-
 \begin_inset Quotes eld
 \end_inset
 
@@ -7971,16 +6181,16 @@ Final coverage prediction
  contribute with a larger portion of time as we increase the number of cores,
  since the total wall-clock processing time decreases.
  Additionally, the low parallel efficiency for small problem sizes, particularly
- for 64 (Figure 
+ for 64 (
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:strong_scalability_relative_time-64"
 
 \end_inset
 
-) and 256 transmitters (Figure 
+) and 256 transmitters (
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:strong_scalability_relative_time-256"
 
 \end_inset
@@ -8005,23 +6215,9 @@ Load balancing
 In this section, we analyze the level of utilization of the computing resources
  available at the computing nodes hosting the worker processes.
  Computing-resource utilization is achieved by partitioning the computational
- workload and data 
-\change_deleted 258802063 1354125041
-unevenly
-\change_unchanged
- across all processors.
- 
-\change_inserted 258802063 1354125234
-Efficient
-\change_inserted 67598359 1354201749
- 
-\change_deleted 258802063 1354125115
-W
-\change_inserted 258802063 1354125117
-w
-\change_unchanged
-orkload distribution strategies should be based on the processor speed,
- memory hierarchy and communication network 
+ workload and data across all processors.
+ Efficient workload distribution strategies should be based on the processor
+ speed, memory hierarchy and communication network 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Clarke_Dynamic_load_balancing:2011"
@@ -8041,11 +6237,7 @@ reference "sub:Master-worker-communication"
 \end_inset
 
 ) between master and worker processes.
- When a worker process issues an idle message (
-\change_inserted 67598359 1354201776
-see the 
-\change_unchanged
-
+ When a worker process issues an idle message (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -8053,26 +6245,15 @@ Send idle message
 \begin_inset Quotes erd
 \end_inset
 
-
-\change_inserted 67598359 1354201779
- step
-\change_unchanged
- in Figure 
+ step in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_worker_communication"
 
 \end_inset
 
-), 
-\change_deleted 258802063 1354125243
-it
-\change_inserted 258802063 1354125251
-the worker process will block
-\change_deleted 258802063 1354125255
- stops executing
-\change_unchanged
- until the message arrives to the master process.
+), the worker process will block until the message arrives to the master
+ process.
  A similar situation occurs when the master process signals a worker back,
  whether to indicate it to shutdown or to continue working.
  Since the process-to-core mapping is one-to-one, blocking messages typically
@@ -8089,38 +6270,17 @@ key "Bhandarkar_Adaptive_load_balancing_for_MPI:2001"
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 258802063 1354125387
-Based on the definition given in 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Cruz_Particle.Flow.Simulation:2010"
-
-\end_inset
-
-, w
-\change_inserted 258802063 1354125392
-W
-\change_unchanged
-e use the following metric as an indicator of the load balancing among processes
-:
-\change_inserted 258802063 1354125397
-
+We use the following metric as an indicator of the load balancing among
+ processes:
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 258802063 1354125440
 fcruz:I will see if I can chase a better reference for this.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -8157,9 +6317,9 @@ Input data broadcasting
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
@@ -8172,9 +6332,9 @@ Create final coverage prediction
 \begin_inset Quotes erd
 \end_inset
 
- in Figure 
+ in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:master_process"
 
 \end_inset
@@ -8266,9 +6426,9 @@ name "fig:load_balancing"
 \end_layout
 
 \begin_layout Standard
-From the plot shown in Figure 
+From the plot shown in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:load_balancing"
 
 \end_inset
@@ -8322,20 +6482,14 @@ key "Ozimek_Open.source.radio.coverage.prediction:2010"
 \end_inset
 
 .
- Although the reported results show a comparable quality to those of a professio
-nal radio-planning tool, there is an explicit concern about the performance
- of a specific module
-\emph on
-, r.MaxPower
-\emph default
-.
- The authors note that due to its memory inefficiency, it is not possible
- to consider large regions, since the afore-mentioned module runs out of
- memory.
- Although a performance comparison with this work would not be fair since
- it only deals with serial implementations, the parallel implementation
- of PRATO is not subject to the memory problem, making calculation over
- large regions with many transmitters perfectly possible.
+ The reported results show a comparable quality to those of a professional
+ radio-planning tool.
+ Since the results of the conducted comparison tests showed identical results
+ between PRATO and this work, we may conclude that PRATO reaches solutions
+ of comparable quality to those of a professional tool.
+ However, a performance comparison with this work has not been performed,
+ because it only deals with serial implementations.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -8350,7 +6504,7 @@ key "QRap"
 .
  Developed by the University of Pretoria and the Meraka Institute of South
  Africa, the software was made publicly available in May 2010.
- Its design is driven as an end-user tool, with a graphical user interface,
+ Its design is geared towards an end-user tool with a graphical user interface,
  not appropriate for big batch jobs involving thousands of transmitters,
  or even parallel job execution.
  It is implemented as a plug-in for the Quantum GIS (QGIS) open source system
@@ -8453,8 +6607,6 @@ age prediction tool for GRASS GIS.
  The results have been analyzed to determine the level of scalability of
  the implementation, as well as the impact of the introduced patterns for
  parallel algorithm design within GRASS GIS.
-\change_inserted 67598359 1354203612
-
 \end_layout
 
 \begin_layout Standard
@@ -8469,20 +6621,14 @@ The conducted analysis shows that PRATO is able to calculate the radio-coverage
  of simulations take part of the evaluation step during an optimization
  process.
  Still, further research is needed on how this method may be exploited.
-\change_inserted 67598359 1354203680
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 67598359 1354203946
 Nevertheless, as PRATO is FOSS, it can be readily modified and extended
  to support, for example, other propagation models and post-processing algorithm
 s.
  This characteristic defines a clear advantage when compared to commercial
  and closed-source tools.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section*
@@ -8491,16 +6637,10 @@ Acknowledgment
 
 \begin_layout Standard
 This project was co-financed by the European Union, through the European
- Social Fund
-\change_inserted 258802063 1354125969
-.
+ Social Fund.
  Cruz and Hamada acknowledge support from the Special Coordination Funds
  for Promoting Science and Technology, Ministry of Education, Culture, Sports,
  Science and Technology, Japan (MEXT).
-\change_deleted 258802063 1354125699
-.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard

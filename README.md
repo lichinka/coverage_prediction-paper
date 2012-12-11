@@ -1,4 +1,4 @@
-Latest version in 'manuscript.lyx'.-
+Latest versions:
 
-    $> md5sum manuscript.lyx
-    9575c51d31a83191dc942bbead1923d9    manuscript.lyx
+    $> md5sum arxiv/manuscript.lyx
+    9f6ffbc96047e3310786b700de5f6a56  arxiv/manuscript.lyx

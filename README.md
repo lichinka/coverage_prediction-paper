@@ -1,4 +1,8 @@
 Latest versions:
 
     $> md5sum arxiv/manuscript.lyx
-    9f6ffbc96047e3310786b700de5f6a56  arxiv/manuscript.lyx
+    3351935bdb95af49945136ab8a36dd8b    arxiv/manuscript.lyx
+
+    $> md5sum elsevier/manuscript.lyx
+    8ea1a75a96937b2e5948fa80545e9f41    elsevier/manuscript.lyx
+

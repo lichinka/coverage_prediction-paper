@@ -529,9 +529,9 @@ key "Saleh_On_the_coveraga_extension_in_LTE_networks:2010"
 \end_layout
 
 \begin_layout Standard
-Despite various options of commercial tools, specialized in radio-propagation
- modeling, the common thread among all of them is the restricted nature
- of its usage, mostly dominated by black-box implementations.
+Despite various options of commercial tools specialized in radio-propagation
+ modeling, the common thread among them is the restricted nature of its
+ usage, mostly dominated by black-box implementations.
  This fact induces lack of adaptability, sometimes even combined with cumbersome
  user interfaces that are not suitable for big batch jobs, involving thousands
  of transmitters.
@@ -641,7 +641,7 @@ name "sub:Objectives"
 \begin_layout Standard
 The main goal of this work is to develop a radio prediction tool to be used
  in large real-world network environments, such as the ones currently deployed
- by mobile operators.
+ by several mobile operators around the world.
  To achieve this, we have developed a high-performance parallel radio prediction
  tool (PRATO) for radio networks.
  Therefore, our focus is on the performance and scalability of PRATO, while
@@ -985,7 +985,7 @@ where
 \end_layout
 
 \begin_layout Standard
-In this work, as well as in the reference implementation in 
+In this work, as well as in the reference implementation 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ozimek_Open.source.radio.coverage.prediction:2010"
@@ -1063,8 +1063,8 @@ name "sub:GRASS-GIS"
 \end_layout
 
 \begin_layout Standard
-As the target software environment for PRATO we have chosen GRASS (Geographic
- Resources Analysis Support System) 
+As the software environment for PRATO we have chosen GRASS (Geographic Resources
+ Analysis Support System) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "neteler2002:GRASS_GIS"
@@ -1258,8 +1258,8 @@ GRASS raster files are used for the digital elevation model and clutter
 \end_layout
 
 \begin_layout Itemize
-a text file is used for the transmitter configurations and other service-depende
-nt options.
+a text file is used for the transmitter configurations and other simulation-depe
+ndent options.
 \end_layout
 
 \begin_layout Standard
@@ -1305,7 +1305,7 @@ reference "fig:INI_file"
 
 \begin_layout Standard
 \begin_inset Float figure
-wide false
+wide true
 sideways false
 status open
 
@@ -1314,7 +1314,7 @@ status open
 \align left
 
 \family typewriter
-\size tiny
+\size small
 [Common]
 \end_layout
 
@@ -1323,7 +1323,7 @@ status open
 \align left
 
 \family typewriter
-\size tiny
+\size small
 DEMMapName = dem25@PERMANENT ; name of the digital elevation model raster
  map
 \end_layout
@@ -1333,7 +1333,7 @@ DEMMapName = dem25@PERMANENT ; name of the digital elevation model raster
 \align left
 
 \family typewriter
-\size tiny
+\size small
 clutterMapName = clut25@PERMANENT ; name of the clutter map
 \end_layout
 
@@ -1342,7 +1342,7 @@ clutterMapName = clut25@PERMANENT ; name of the clutter map
 \align left
 
 \family typewriter
-\size tiny
+\size small
 receiverHeightAGL = 1.5 ; receiver's height above ground level
 \end_layout
 
@@ -1351,7 +1351,7 @@ receiverHeightAGL = 1.5 ; receiver's height above ground level
 \align left
 
 \family typewriter
-\size tiny
+\size small
 frequency = 2040.0 ; transmitter frequency in MHz 
 \end_layout
 
@@ -1360,7 +1360,7 @@ frequency = 2040.0 ; transmitter frequency in MHz
 \align left
 
 \family typewriter
-\size tiny
+\size small
 radius = 20 ; calculation radius around a transmitter (in km)
 \end_layout
 
@@ -1369,7 +1369,7 @@ radius = 20 ; calculation radius around a transmitter (in km)
 \align left
 
 \family typewriter
-\size tiny
+\size small
 antennaDirectory = ~/antenna ; directory containing antenna files
 \end_layout
 
@@ -1378,7 +1378,7 @@ antennaDirectory = ~/antenna ; directory containing antenna files
 \align left
 
 \family typewriter
-\size tiny
+\size small
 [TX_1]
 \end_layout
 
@@ -1387,7 +1387,7 @@ antennaDirectory = ~/antenna ; directory containing antenna files
 \align left
 
 \family typewriter
-\size tiny
+\size small
 cellName = TX_1 ; name of the transmitter 
 \end_layout
 
@@ -1396,7 +1396,7 @@ cellName = TX_1 ; name of the transmitter
 \align left
 
 \family typewriter
-\size tiny
+\size small
 beamDirection = 20 ; antenna beam angle 
 \end_layout
 
@@ -1405,7 +1405,7 @@ beamDirection = 20 ; antenna beam angle
 \align left
 
 \family typewriter
-\size tiny
+\size small
 electricalTiltAngle = 2 ; 
 \end_layout
 
@@ -1414,7 +1414,7 @@ electricalTiltAngle = 2 ;
 \align left
 
 \family typewriter
-\size tiny
+\size small
 mechanicalTiltAngle = 3 ; 
 \end_layout
 
@@ -1423,7 +1423,7 @@ mechanicalTiltAngle = 3 ;
 \align left
 
 \family typewriter
-\size tiny
+\size small
 heightAGL = 23.9 ; antenna height above ground level 
 \end_layout
 
@@ -1432,7 +1432,7 @@ heightAGL = 23.9 ; antenna height above ground level
 \align left
 
 \family typewriter
-\size tiny
+\size small
 antennaFile = 742212_2140_X_CO_M45_02T.MSI ; antenna diagram file 
 \end_layout
 
@@ -1441,7 +1441,7 @@ antennaFile = 742212_2140_X_CO_M45_02T.MSI ; antenna diagram file
 \align left
 
 \family typewriter
-\size tiny
+\size small
 positionEast = 501152 ; coordinate of the transmitter 
 \end_layout
 
@@ -1450,7 +1450,7 @@ positionEast = 501152 ; coordinate of the transmitter
 \align left
 
 \family typewriter
-\size tiny
+\size small
 positionNorth = 142449 ; coordinate of the transmitter 
 \end_layout
 
@@ -1459,7 +1459,7 @@ positionNorth = 142449 ; coordinate of the transmitter
 \align left
 
 \family typewriter
-\size tiny
+\size small
 power = 30.2 ; transmitter pilot power in dBm
 \end_layout
 
@@ -1467,7 +1467,7 @@ power = 30.2 ; transmitter pilot power in dBm
 \noindent
 \align left
 
-\size tiny
+\size small
 ...
 \end_layout
 
@@ -1848,24 +1848,12 @@ reference "fig:serial_version_flow_diagram"
 \align left
 
 \family typewriter
-\size scriptsize
+\size small
 $ r.prato ini_file=./parameters.ini tx_ini_section=TX_1 | psql -h server_name
  -U usr_name db_name
 \size default
 
 \begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Do you think that changing the name of the module from r.coverage to prato.coverag
-e or just prato might make more clear that this is the PRATO application
- and not something else?
-\end_layout
-
 \end_inset
 
 
@@ -1943,11 +1931,11 @@ reference "fig:serial_version_flow_diagram"
 \begin_layout Standard
 Finally, the output raster is generated, using the GRASS built-in modules
  
-\begin_inset Formula $r.in.xyz$
+\begin_inset Formula $v.in.ascii$
 \end_inset
 
  and 
-\begin_inset Formula $r.resamp.rst$
+\begin_inset Formula $v.to.rast$
 \end_inset
 
 , which create a raster map using the results of the above-mentioned query
@@ -2040,7 +2028,7 @@ The implementation methodology adopted for PRATO follows a multi-paradigm
  To effectively use a shared memory multi-processor, PRATO uses POSIX threads
  to implement parallelism 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "Butenhof_Programming.with.POSIX.threads:1997"
 
 \end_inset
@@ -2163,8 +2151,8 @@ reference "fig:master_process"
 \end_inset
 
 , is the only component that should be run from within the GRASS environment.
- As soon as the master process starts, the input parameters are read, this
- step corresponds to 
+ As soon as the master process starts, the input parameters are read.
+ This step corresponds to 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2179,9 +2167,7 @@ reference "fig:master_process"
 
 \end_inset
 
-.
- The reading of the input parameters is done in a similar way as in the
- serial version.
+, and it is done in a similar way as in the serial version.
  In the next step, the master process dynamically initiates the worker processes
  using the available computing nodes (see the 
 \begin_inset Quotes eld
@@ -2198,16 +2184,16 @@ reference "fig:master_process"
 
 \end_inset
 
-), and takes into account the amount of transmitters for which the coverage
- prediction should be calculated.
+), based on the amount of transmitters for which the coverage prediction
+ should be calculated.
  In other words, this means that master process never starts more worker
  processes than the number of transmitters to be processed.
  However, most often there are more transmitters than available computing
  nodes, therefore, the master process can assign several transmitters to
  each of the worker processes.
  For distributing the work among the worker processes, the master process
- then proceeds to decompose the loaded raster data into arrays of basic-data-typ
-e elements, e.g.
+ proceeds to decompose the loaded raster data into arrays of basic-data-type
+ elements, e.g.
  floats or doubles, before dispatching them to the multiple worker processes
  (see the 
 \begin_inset Quotes eld
@@ -2243,9 +2229,8 @@ reference "fig:master_process"
 
 \end_inset
 
-), which main task is to assign and distribute the calculation work, i.e.
- the configuration data of the different transmitters, among idle worker
- processes.
+), which main task is to assign and distribute the configuration data of
+ the different transmitters among idle worker processes.
 \end_layout
 
 \begin_layout Standard
@@ -2324,9 +2309,9 @@ Processing loop
 \end_inset
 
  step of the master process.
- In the processing loop, the master process starts by checking which worker
- processes are available, so that they may calculate the radio coverage
- prediction for the next transmitter.
+ In the processing loop, the master process starts by checking the available
+ worker processes, which will calculate the radio coverage prediction for
+ the next transmitter.
  It is worth pointing out that this step also serves as a stopping condition
  for the processing loop itself (see the 
 \begin_inset Quotes eld
@@ -2344,8 +2329,8 @@ reference "fig:processing_loop_in_master_process"
 \end_inset
 
 ).
- The active worker processes inform master they are ready to compute by
- sending an idle message (see the 
+ The active worker processes inform the master process they are ready to
+ compute by sending an idle message (see the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2387,7 +2372,7 @@ reference "fig:processing_loop_in_master_process"
 \end_inset
 
 ).
- This is only done if there are still transmitters, for which the coverage
+ This is only done in case there are transmitters for which the coverage
  prediction has yet to be calculated (see the 
 \begin_inset Quotes eld
 \end_inset
@@ -2530,8 +2515,8 @@ reference "fig:master_process"
 \end_inset
 
 ).
- The final result for the coverage of all transmitters is an aggregation
- from the individual path-loss results created by each of the worker processes
+ The final coverage prediction of all transmitters is an aggregation from
+ the individual path-loss results created by each of the worker processes
  during the 
 \begin_inset Quotes eld
 \end_inset
@@ -2593,7 +2578,7 @@ reference "fig:worker_process_flow_diagram"
 
 ).
  It is important to note that the received data contain the transmitter
- and terrain-profile information which iscommon to all the coverage-prediction
+ and terrain-profile information which is common to all the coverage-prediction
  calculations, therefore making each worker process capable of processing
  any given transmitter.
 \end_layout
@@ -3056,7 +3041,15 @@ To test the parallel performance of PRATO, we have prepared different problem
  The configuration parameters of these 10 transmitters are taken from the
  UMTS network deployed in Slovenia by Telekom Slovenije, d.d.
  The path-loss predictions are calculated using the COST-231.
- The digital elevation model used has a resolution of 25
+ The digital elevation model has an area of 20,270
+\begin_inset space ~
+\end_inset
+
+km
+\begin_inset Formula $^{2}$
+\end_inset
+
+, with a resolution of 25
 \begin_inset space ~
 \end_inset
 
@@ -3064,8 +3057,8 @@ m
 \begin_inset Formula $^{2}$
 \end_inset
 
-, the same as the clutter data, containing different levels of signal loss
- based on the land usage.
+, the same as the clutter data, which contains different levels of signal
+ loss based on the land usage.
  For all the points within a transmission radius of 20
 \begin_inset space ~
 \end_inset
@@ -3134,7 +3127,7 @@ centering
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
+<lyxtabular version="3" rows="6" columns="2">
 <features booktabs="true" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
 <column alignment="right" valignment="top" width="0">
@@ -3163,7 +3156,7 @@ Value
 \begin_inset Text
 
 \begin_layout Plain Layout
-Resolution (m
+Area (km
 \begin_inset Formula $\textrm{^{2}}$
 \end_inset
 
@@ -3173,6 +3166,30 @@ Resolution (m
 \end_inset
 </cell>
 <cell alignment="right" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20,270.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Resolution (m
+\begin_inset Formula $\textrm{^{2}}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4416,21 +4433,6 @@ name "fig:weak_scalability_relative_time-80"
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-How does the relative plots looks like when they include the read input
- data time? The usefulness of having the relative time and the wall-clock
- time plots and table is reduced if the relative plots do not use the wall-clock
- time as reference.
- As we cannot use the walk-clock time and relative plots to compare how
- each of the program stages behave.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4497,19 +4499,6 @@ Create final coverage prediction
 
  step, we may see that as we increase the number of cores the relative times
  grow proportionally for all three problem sizes.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The idea in this last point is not clear, can you elaborate?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -6305,8 +6294,8 @@ where
 
  is the number of cores executing worker processes.
  Taking the processing-loop time of the master process ensures we measure
- the overhead of the message passing, while the coverage prediction is being
- executed by the workers.
+ the overhead of the message passing at the same time the coverage prediction
+ is being executed by the workers.
  This means that the time measurement is performed excluding the serial
  parts of the process, i.e.
  after the common data have been broadcasted to all worker processes (
@@ -6443,8 +6432,8 @@ rs), parallel-process execution times are within 95% of a perfect load-balancing
  by our message-passing technique.
  For problem instances of 64 and 128 transmitters, the parallel-process
  times are within 80% of the perfect load balancing, showing that, as the
- number of transmitters per core approaches one, latencies introduced by
- several hardware and OS-specific factors (e.g.
+ number of transmitters per core approaches to one, latencies introduced
+ by several hardware and OS-specific factors (e.g.
  TurboBoost, process affinity, etc.) are influential over the total process
  time.
  Particularly, message-passing is not able to compensate these latencies
@@ -6453,7 +6442,7 @@ rs), parallel-process execution times are within 95% of a perfect load-balancing
 
 \begin_layout Standard
 It is worth pointing out that the very good load-balancing factors shown
- before are not only merit of the message-passing technique.
+ here are not only merit of the message-passing technique.
  The result dumping of partial path-loss predictions, performed by the worker
  processes in a separate thread into an external database server, prevents
  data synchronization from occurring at each iteration of the parallel process,

@@ -7084,9 +7084,10 @@ s
 
 \begin_layout Standard
 This project was co-financed by the European Union, through the European
- Social Fund. Hamada acknowledges support from the Japan Society for the 
- Promotion of Science (JSPS) through its Funding Program for World-leading 
- Innovative R&D on Science and Technology (First Program).
+ Social Fund.
+ Hamada acknowledges support from the Japan Society for the  Promotion of
+ Science (JSPS) through its Funding Program for World-leading  Innovative
+ R&D on Science and Technology (First Program).
 \end_layout
 
 \begin_layout Standard
@@ -7100,36 +7101,27 @@ options "ieeetr"
 \end_inset
 
 
-\change_inserted 2090485842 1355734366
+\change_inserted 2090485842 1355824098
 
 \end_layout
 
-\begin_layout Biography without photo
+\begin_layout Standard
 
-\change_inserted 2090485842 1355742341
+\change_inserted 2090485842 1355824658
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted 2090485842 1355735369
+\change_inserted 2090485842 1355824141
 
-{
-\change_unchanged
 
-\end_layout
-
-\end_inset
-
-Lucas Benedičič
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 2090485842 1355735374
-
-}
+\backslash
+begin{IEEEbiographynophoto}{Lucas Benedi
+\backslash
+v{c}i
+\backslash
+v{c}}
 \change_unchanged
 
 \end_layout
@@ -7137,29 +7129,29 @@ status open
 \end_inset
 
  received his M.Sc.
- in computer sciences from the University of Primorska, Faculty of Mathematics,
- Natural Sciences and Informational Technologies Koper in 2009.
- He is currently a Ph.D.
+ in computer sciences from the University of Primorska, Koper, Slovenia,
+ in 2009.
+ He is a Ph.D.
  candidate at the Jo
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted 2090485842 1355735488
+\change_inserted 2090485842 1355824183
 
 
 \backslash
 v{z}
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-ef Stefan International Postgraduate School, in Ljubljana, Slovenia.
+ef Stefan International Postgraduate School, currently holding a position
+ in the Research and Development Department at Telekom Slovenije, d.d., in
+ Ljubljana, Slovenia.
  His research interests include parallel algorithms, high-performance computing,
- GPGPU, and discrete optimization applied to mobile networks.
+ GPGPU, and combinatorial optimization applied to mobile networks.
  More information is available at 
 \begin_inset CommandInset href
 LatexCommand href
@@ -7173,220 +7165,194 @@ target "http://csd.ijs.si/benedicic/"
 
 \begin_layout Standard
 
-\change_inserted 2090485842 1355742358
+\change_inserted 2090485842 1355824312
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 2090485842 1355824225
+
+
+\backslash
+end{IEEEbiographynophoto}
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 2090485842 1355824345
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 2090485842 1355824322
+
+
+\backslash
+begin{IEEEbiographynophoto}{Felipe A.
+ Cruz}
+\end_layout
+
+\end_inset
+
+ was born in Chile in 1982.
+ He received the B.
 \begin_inset space ~
 \end_inset
 
+Eng., P.
+\begin_inset space ~
+\end_inset
 
-\end_layout
-
-\begin_layout Biography without photo
-
-\change_inserted 2090485842 1355752295
+Eng, and M.Sc.
+ degree in informatic engineering from the Universidad T
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted 2090485842 1355737962
+\change_inserted 2090485842 1355824338
 
-{
-\change_unchanged
 
+\backslash
+'{e}
 \end_layout
 
 \end_inset
 
-Felipe A.
- Cruz
+cnica Federico Santa Mar
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted 2090485842 1355737973
+\change_inserted 2090485842 1355824338
 
-}
-\change_unchanged
 
+\backslash
+'{i}
+\end_layout
+
+\end_inset
+
+a, Valpara
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 2090485842 1355824338
+
+
+\backslash
+'{i}
+\end_layout
+
+\end_inset
+
+so, Chile, in 2004, 2006, and 2007, respectively.
+ He received the Ph.D.
+ degree in mathematics from the University of Bristol, U.K., in 2011.
+ He is currently a postdoctoral fellow at the Nagasaki Advanced Computing
+ Center at Nagasaki University, Japan.
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 2090485842 1355824346
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 2090485842 1355824346
+
+
+\backslash
+end{IEEEbiographynophoto}
+\end_layout
+
+\end_inset
+
+
+\change_deleted 2090485842 1355824361
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 2090485842 1355824411
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 2090485842 1355824384
+
+
+\backslash
+begin{IEEEbiographynophoto}{Tsuyoshi Hamada}
 \end_layout
 
 \end_inset
 
  received his Ph.D.
- from the University of Bristol ...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...???
+ in 2006 from the University of Tokyo.
+ From 2006 to 2008 he was a Special Postdoctoral Researcher at RIKEN.
+ In 2008 he became an Assistant Professor at Nagasaki University, and was
+ promoted to Associate Professor in 2010.
+ With his work on massively parallel architectures he was awarded the Gordon
+ Bell prize for prize/performance in 2009 and a Gordon Bell prize Honorable
+ mention in 2010.
+ He is currently the deputy director of the Nagasaki Advanced Computing
+ Center at Nagasaki University, Japan.
 \end_layout
 
 \begin_layout Standard
 
-\change_inserted 2090485842 1355742371
-\begin_inset space ~
-\end_inset
-
-
-\end_layout
-
-\begin_layout Biography without photo
-
-\change_inserted 2090485842 1355752290
+\change_inserted 2090485842 1355824411
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted 2090485842 1355738046
-
-{
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-Tsuyoshi Hamada
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 2090485842 1355738054
-
-}
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- biography...
- ???
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 2090485842 1355742381
-\begin_inset space ~
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Biography without photo
-
-\change_inserted 2090485842 1355737652
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 2090485842 1355735449
-
-{
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-Peter Koro
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 2090485842 1355737656
+\change_inserted 2090485842 1355824411
 
 
 \backslash
-v{s}
-\change_unchanged
-
+end{IEEEbiographynophoto}
 \end_layout
 
 \end_inset
 
-ec
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 2090485842 1355824468
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\change_inserted 2090485842 1355735457
+\change_inserted 2090485842 1355824454
 
-}
-\change_unchanged
 
+\backslash
+begin{IEEEbiographynophoto}{Peter Koro
+\backslash
+v{s}ec}
 \end_layout
 
 \end_inset
@@ -7442,6 +7408,26 @@ target "http://csd.ijs.si/korosec/"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 2090485842 1355824470
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 2090485842 1355824470
+
+
+\backslash
+end{IEEEbiographynophoto}
+\end_layout
+
+\end_inset
+
+
 \change_unchanged
 
 \end_layout

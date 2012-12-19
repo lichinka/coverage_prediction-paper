@@ -88,6 +88,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 67598359 "Lucas Benedicic,,," 
 \author 2090485842 "luka" 
 \end_header
 
@@ -7357,6 +7358,8 @@ v{s}ec}
 
 \end_inset
 
+
+\change_inserted 67598359 1355913383
  received his Ph.D.
  from the Jo
 \begin_inset ERT
@@ -7364,13 +7367,11 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted 2090485842 1355735526
+\change_inserted 67598359 1355913376
 
 
 \backslash
 v{z}
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -7382,24 +7383,24 @@ status open
 
 \begin_layout Plain Layout
 
-\change_inserted 2090485842 1355735508
+\change_inserted 67598359 1355913383
 
 
 \backslash
 v{z}
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 ef Stefan Institute, Ljubljana, Slovenia.
- He is presently a researcher at the Computer Systems Department and an
+ He is presently a researcher at the Computer Systems department and an
  assistant professor at the University of Primorska, Faculty of Mathematics,
- Natural Sciences and Informational Technologies Koper, Koper, Slovenia.
- His current areas of research include combinatorial and numerical optimization
- with ant-based metaheuristics, and parallel computing.
- More information about his work can be found at 
+ Natural Sciences and Information Technologies Koper, Koper, Slovenia.
+ His research interest include combinatorial and numerical optimization
+ with modern metaheuristics in parallel and distributed computing.
+ More information about his work can be found
+\change_unchanged
+ at 
 \begin_inset CommandInset href
 LatexCommand href
 name "http://csd.ijs.si/korosec/"
@@ -7411,14 +7412,10 @@ target "http://csd.ijs.si/korosec/"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 2090485842 1355824470
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 2090485842 1355824470
 
 
 \backslash
@@ -7427,8 +7424,6 @@ end{IEEEbiographynophoto}
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 

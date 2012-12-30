@@ -1140,7 +1140,7 @@ centering
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename img/isotrophic_calculation.png
+	filename img/isotrophic_calculation.eps
 	lyxscale 30
 	width 80col%
 
@@ -1210,7 +1210,7 @@ centering
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename img/antenna_calculation.png
+	filename img/antenna_calculation.eps
 	lyxscale 30
 	width 80col%
 
@@ -1653,7 +1653,7 @@ centering
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename img/final_coverage.png
+	filename img/final_coverage.eps
 	lyxscale 30
 	width 95col%
 
@@ -6449,7 +6449,7 @@ ef Stefan Institute, Ljubljana, Slovenia.
  He is presently a researcher at the Computer Systems department and an
  assistant professor at the University of Primorska, Faculty of Mathematics,
  Natural Sciences and Information Technologies Koper, Koper, Slovenia.
- His research interest include combinatorial and numerical optimization
+ His research interests include combinatorial and numerical optimization
  with modern metaheuristics in parallel and distributed computing.
  More information about his work can be found at 
 \begin_inset CommandInset href

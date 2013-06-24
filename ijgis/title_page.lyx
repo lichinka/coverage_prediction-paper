@@ -1,0 +1,218 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass tGIS2e
+\begin_preamble
+%
+% Format of Figure cross-references
+%
+\usepackage{prettyref}
+\newrefformat{fig}{Figure~\ref{#1}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding default
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement tbh
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+doi{10.1080/1365881YYxxxxxxxx}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+title{
+\end_layout
+
+\end_inset
+
+A GRASS GIS parallel module for radio-propagation predictions
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Lucas~Benedi
+\backslash
+v{c}i
+\backslash
+v{c}$^{a}$$^{
+\backslash
+ast}$
+\backslash
+thanks{$^
+\backslash
+ast$Corresponding author.
+ Email: lucas.benedicic@telekom.si
+\backslash
+vspace{6pt}}, Felipe~A.~Cruz$^{b}$, Tsuyoshi~Hamada$^{b}$ and Peter~Koro
+\backslash
+v{s}ec$^{c}$
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{6pt} $^{a}${
+\backslash
+em{Research and Development department, Telekom Slovenije, d.d., Cigaletova
+ 15, SI-1000 Ljubljana, Slovenia}}; $^{b}${
+\backslash
+em{Nagasaki Advanced Computer Center, Nagasaki University, 1-14 Bunkyo-machi,
+ Nagasaki-city, Nagasaki, 852-8521, Japan}}; $^{c}${
+\backslash
+em{Computer Systems department, Jo
+\backslash
+v{z}ef Stefan Institute, Jamova cesta 39, SI-1000 Ljubljana, Slovenia}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{6pt}
+\backslash
+received{Received 19 March 2013}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+This project was co-financed by the European Union, through the European
+ Social Fund.
+ Hamada acknowledges support from the Japan Society for the Promotion of
+ Science (JSPS) through its Funding Program for World-leading Innovative
+ R&D on Science and Technology (First Program).
+\end_layout
+
+\end_body
+\end_document

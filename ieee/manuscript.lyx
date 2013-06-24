@@ -26,7 +26,7 @@
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding default
+\inputencoding auto
 \fontencoding global
 \font_roman default
 \font_sans default
@@ -565,10 +565,9 @@ Parallel computation on computer clusters
 \end_layout
 
 \begin_layout Standard
-In consideration of the high computational-intensity of predicting the radio-cov
-erage of a real mobile network, the use of a computer cluster is required,
- i.e.
- a group of interconnected computers that work together as a single system.
+Considering the high computational effort for predicting the radio coverage
+ of a real mobile network, the use of a computer cluster is required, i.e.
+ a group a interconnected computers that work together as a single system.
  To reach high levels of parallel performance and scalability, this work
  discusses in detail the key steps of parallel decomposition of the radio-covera
 ge prediction problem for real networks and the distribution of the computationa

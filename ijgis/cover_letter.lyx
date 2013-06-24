@@ -1,0 +1,1018 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{algpseudocode}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Cover letter
+\end_layout
+
+\begin_layout Standard
+Dear Editor,
+\end_layout
+
+\begin_layout Standard
+Thank you very much for the reviews of our paper (manuscript:ID IJGIS-2013-0120
+ entitled "A GRASS GIS parallel module for radio-propagation predictions")
+ that we submitted as a publication candidate to IJGIS.
+ The review comments have been extremely useful to us and we are very grateful
+ for the feedback given by the reviewers as it helped us produce a more
+ solid and complete manuscript.
+\end_layout
+
+\begin_layout Standard
+We acknowledge english is not our native languages, for this reason we had
+ the text reviewed by ...
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hay que agregar que un profesional proof reader trabajo sobre el paper.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Please find below the answers and detailed information about the changes
+ to the manuscript that we made in response to each of the reviewers' comments.
+\end_layout
+
+\begin_layout Section*
+Answers to reviewers' comments
+\end_layout
+
+\begin_layout Subsection*
+Reviewer 1
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+1.
+ In the last sentence of the abstract, “which sizes are …” should be “whose
+ sizes…”.
+\end_layout
+
+\begin_layout Standard
+No problem ...
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+2.
+ Evaluating the existing researches on utilizing HPC to solve Geo-spatial
+ problems, the authors said, “…most of these works are application-specific,
+ and do not introduce general principles for jointing GIS and HPC.” I quite
+ disagree to such point.
+ From this manuscript, I can found:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+2.1 The topic of this research is also application-specific, and the parallelism
+ for such radio-propagation prediction module is not complicated, namely,
+ the workers just do some pure computations, has nothing with the GRASS
+ environment.
+ The process is that the workers do the step of calculating each transmitter
+ path-loss respectively and mutually exclusive, and then write the intermediate
+ results to the external DB.
+ Thus, the parallel module implementation can fully use the characteristic
+ according to the transmitter assignment independently.
+\end_layout
+
+\begin_layout Standard
+The reviewer claims that the radio-propagation prediction module is not
+ complicated.
+ We will argue this is not the case and provide the computational-complexity
+ analysis of the radio-propagation prediction algorithm as evidence to support
+ our assertion.
+ Moreover, that the parallel implementation abstracts GRASS from its computation
+ is a feature of our implementation that to overcome the limitations of
+ GRASS in regard of concurrent access to spatial data.
+ Additionally, writing the intermediate results to an external DB is also
+ a feature of the presented approach, that considerably improves the scalability
+ of the presented implementation when several concurrent processes are involved.
+ On the other hand, spatial-data independence is a property of the problem
+ itself, which we exploit by applying block-data distribution, in as similar
+ way as in [ref!
+\emph on
+Optimal tilt and orientation maps: a multi-algorithm approach for heterogeneous
+ multicore-GPU systems
+\emph default
+, 
+\emph on
+High-performance three-horizon composition algorithm for large-scale terrains
+\emph default
+].
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+2.2 Such methodology to make the GRASS GIS module parallel has appeared in
+ the paper titled “Explorations of the implementation of a parallel IDW
+ interpolation algorithm in a Linux cluster-based parallel GIS” (published
+ on C&G).
+ In that research, the slave nodes also just do their own pure computations
+ assigned from the master node.
+ Therefore, the author’s discussion on that research is also problematic.
+\end_layout
+
+\begin_layout Standard
+This work also abstracts the GRASS data types into its own struct and MPI
+ data types, thus not needing GRASS in the worker nodes.
+ Data is evenly divided by row among the workers, with each one receiving
+ an exclusive column extent on which to work.
+ The test cluster contains heterogenous hardware configurations.
+ About this point, we argue that evenly distributing the data among the
+ worker does not maximize the parallelization gain, since the slowest node
+ in the cluster is an upper bound of the achieved speed-up and efficiency
+ (i.e.
+ speed-up/num.
+ of parallel processes) 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+alguna referencia que soporte esto?
+\end_layout
+
+\end_inset
+
+.
+ The authors also note that other GRASS modules can be adapted to parallel
+ versions using the presented procedure.
+ Regarding the data sets during the simulations, the largest one contains
+ 3,265,110 points, which is almost 20 times smaller than the data sets used
+ by PRATO.
+ The authors note that the data-set size is bounded by the amount of memory
+ on each of the nodes, since they allocate memory for the whole map as part
+ of the set-up stage, before starting the calculation.
+ It follows that memory consumption is an issue with this approach.
+ Indeed, their 
+\emph on
+Point 
+\emph default
+struct contains four double variables for each pixel of the loaded map.
+ Consequently, the amount of required memory is a priori 4 times bigger
+ than the loaded data set.
+ In our case, only one double variable per pixel is used, with only one
+ 2D geographical offset per loaded matrix.
+ It is not clear what 
+\emph on
+npoints 
+\emph default
+is.
+ Their conclusion is that the data-set size should be large enough for the
+ communication overhead to be hidden by the calculation time, so that paralleliz
+ation pays off.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+3.
+ In paragraph 4 “…radio-coverage prediction is a computationally-intensive
+ and time-consuming task, hence the importance of using fast and…”, you’d
+ better provide the quantitative data.
+\end_layout
+
+\begin_layout Standard
+To demonstrate that solving the radio-coverage prediction is a computational
+ intensive problem, we have added a section discussing the computational
+ complexity of the problem.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+4.
+ In Figure 4, it is better to present the raster map involved more transmitters;
+\end_layout
+
+\begin_layout Standard
+We have added a raster map that includes X transmiters, this is Y times
+ more than the original manuscript.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+5.
+ In Section 3.3, to the parallel module design and implementation, I have
+ some questions:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+5.1 In order to avoid the workers’ concurrent writing operations, the research
+ adopt the approach of making the workers’ partial coverage evaluation results
+ writing into the external database.
+ After that, the master will reread the intermediate results and then give
+ the aggregation output.
+ In this procedure, it is clever to avoid the bottleneck to adopt this way;
+ however, the efficiency of the module will be affected by the repeat and
+ needless outputting and inputting;
+\end_layout
+
+\begin_layout Standard
+Writing the partial coverage evaluation results to an external DB avoids
+ overloading the master process, thus making better use of the available
+ resources.
+ This point is clarified with an extra set of experiments, comparing the
+ advantanges of using/not using the external DB for saving intermediate
+ results as well as the final aggregation of the radio-coverage prediction.
+ Ideally, the time spent during each algorithm step should be discriminated
+ in order to find out if the time contribution using the DB is significant.
+ Moreover, we argue that in a traditional master-worker approach, the master
+ process suffers execution overload, when several requests of the worker
+ processes.
+ It follows that the efficiency degradation of the parallel implementation
+ is directly proportional to the capacity of the master process to cope
+ with multiple worker request.
+ By using an external DB, we avoid such situation.
+ Specifically, we have clarified the running time of different problem instances
+ using a traditional master-worker approach and a master-worker-DB alternative.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+5.2 Meanwhile, the adopted task distribution method may obtain low overhead
+ for the heterogeneous cluster system, i.e., different computing tasks will
+ assigned to different workers according with their hardware configurations.
+ However, to the homogeneous cluster, as each node has almost the same hardware,
+ to adopt such approach, the communication between the master and the workers
+ will be intensive, which will also affect the efficiency of the parallel
+ module.
+ Under this circumstance, I think it’s better to make all the transmitters’
+ coverage evaluation calculation distribute to all node evenly.
+\end_layout
+
+\begin_layout Standard
+About this point, we argue that evenly distributing the data among the worker
+ processes has several drawbacks:
+\end_layout
+
+\begin_layout Standard
+(a) when deployed over heterogenous hardware, this approach does not maximize
+ the parallelization gain, since the slowest node in the cluster is an upper
+ bound of the achieved speed-up and efficiency (i.e.
+ speed-up/num.
+ of parallel processes) 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+alguna referencia que soporte esto?
+\end_layout
+
+\end_inset
+
+;
+\begin_inset Newline newline
+\end_inset
+
+(b) in practice, it is rare to find a high number of dedicated computing
+ nodes featuring the exact same configuration, i.e.
+ not every organization has a computer cluster; consequently working on
+ methods and techniques supporting heterogenous hardware configurations,
+ exploitable over a typical LAN, is, from the practical point of view, a
+ far more useful approach in order to fully exploit available computing
+ resources;
+\begin_inset Newline newline
+\end_inset
+
+(c) the overhead representing the partial-data distribution is neglectable
+ when the number of processing worker are above a given threshold.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+podemos medir esto y decir: the overhead is lower than ~0.1% of the total
+ runtime for problem size X, please see table Y for reference?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Moreover, it is often the case for university departments and small companies
+ to have small computer clusters that grow organically, as every year new
+ computers with different memory and CPU configurations are added.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+6.
+ Please cite Neteler and Mitasova 2008 (3rd edition), the second edition
+ is obsolete.
+\end_layout
+
+\begin_layout Standard
+Changed citation to the 3rd edition.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+7.
+ Some trivial problems relate to spelling, formatting etc.
+ e.g., “geosciences” in the references.
+\end_layout
+
+\begin_layout Standard
+Huang, F., et al., 2011., changed journal name from 
+\begin_inset Quotes eld
+\end_inset
+
+Computers & geosciences
+\begin_inset Quotes erd
+\end_inset
+
+ to 
+\begin_inset Quotes eld
+\end_inset
+
+Computers & Geosciences
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Reviewer 2
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+1.
+ The calculation of radio-coverage prediction is not well described.
+ The description of LOS and NLOS is separated from other parts of the coverage
+ prediction, which is confusing.
+ I had to constantly go back and forth to put all information together in
+ order to understand the process.
+ I’d suggest the author put them into one section.
+ Also, some figures would be helpful to explain the process.
+ For example, how to determine if a receiver is within LOS? how is antenna
+ influence calculated?
+\end_layout
+
+\begin_layout Standard
+No problem ...
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+copiar the tun_par!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+2.
+ The parallel algorithm presented in this paper uses some techniques that
+ have been commonly used in general-purpose parallel computing, e.g., master-worke
+r configuration, task-farm dynamic load-balancing.
+ Were there any innovative techniques created for this particular analysis?
+ Or, were there any innovative techniques developed for spatial analysis
+ in general? If not, the lack of innovation will greatly degrade the scientific
+ significance of this work.
+\end_layout
+
+\begin_layout Standard
+We argue that saving the intermediate calculation results in an external
+ DB from an independent thread of the worker process, in a parallel and
+ asynchronous way, is a novel approach that improves the efficiency of the
+ parallel implementation when several processes are involved.
+ Also, using the same DB to aggregate the intermediate results before dispatchin
+g them to the master process for creating the final output is also an innovative
+ technique.
+ To the best of our knowledge, none of these techniques have yet been used
+ in other GIS-related work.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+3.
+ All experiments in this paper were conducted using man-made transmitter
+ data.
+ Is it because the real-world data is not available, or because the real-world
+ data is not big enough for this parallel program to demonstrate the speed-up?
+ I’d like to see some experiment results using real data to show the practical
+ value of this parallel algorithm.
+\end_layout
+
+\begin_layout Standard
+Real data that is used in practice by radio-propagation engineers at telecom
+ companies is generaly not readily available.
+ This data is special as it contains data of transmitters configuration,
+ antena placement, and relevant terrain parameters for the application.
+ However, Telekom Slovenije, d.d., has given us access to a real data set
+ of more than 2000 transmitters.
+ Nevertheless, this is only a small to medium set so in order to test PRATO
+ for larger networks we haver resorted to synthetically create them at ...
+ 
+\end_layout
+
+\begin_layout Standard
+In Telekom Slovenije, d.d., we have real data of more than 2,000 transmitters
+ at our disposal.
+ Since the experimental data sets contain many times this number, we have
+ to synthentically create them by randomly replicating and distributing
+ the real transmitters.
+ Notice that the number of deployed transmitters is directly influenced
+ by two factors.
+ First, the population density over a geographical area, and second, the
+ total area of the country.
+ In this regard, the relatively small population of Slovenia (around 2,000,000
+ people), and its small surface are the reason behind the real-data volume
+ we have available.
+ However, in other countries and regions, e.g.
+ Great London as noted in the paper, transmitter count greater than 10,000
+ are very common.
+ For a transmitter count of different mobile network technologies, we refer
+ the reader to ...
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+referencia de cantidad de antenas por pais?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+4.
+ Section 5 “related work” should be put in the introduction section.
+\end_layout
+
+\begin_layout Standard
+No problem ...
+\end_layout
+
+\begin_layout Subsection*
+Reviewer 3
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+1.
+ The contribution of this paper is not novel since parallelizing existent
+ sequential modules using the data-parallel model in general and task-farming
+ in special has already been tackled by several previous works.
+ Besides, there exist several high-level tools that allow implementing serial
+ modules with a specific patterns or skeletons.
+ I would recommend including a brief review to such tools and explaining
+ the reason why the authors implemented this module manually.
+\end_layout
+
+\begin_layout Standard
+The authors' experience on the area of HPC allowed us to implement the applicati
+on using MPI and POSIX threads directly.
+ This includes several in-house developed tools and libraries which accelerated
+ the development of the presented implementation significantly.
+ Consequently, for the authors to learn a new framework would have meant
+ a bigger time investment.
+ Moreover, the fine-grained control needed for the multithreaded version
+ of the workers is not available in all parallelization frameworks.
+ However, as the reviewer notes, there are some parallelization frameworks
+ already available, e.g.:
+\end_layout
+
+\begin_layout Itemize
+PyMW: the authors acknowledge that PyMW is not well suited for computations
+ with frequent communication and sharing of data between workers.
+\end_layout
+
+\begin_layout Itemize
+ROme OpTimistic Simulator (ROOT-Sim): no user's documentation available.
+ Available at http://www.dis.uniroma1.it/~quaglia/software/ROOT-Sim/
+\end_layout
+
+\begin_layout Itemize
+HTCondor MW: a tool for making a master-worker style application that works
+ in the distributed, opportunistic environment of HTCondor.
+ No cons so far ...
+\end_layout
+
+\begin_layout Itemize
+Charm + + is a good candidate framework: http://en.wikipedia.org/wiki/Charm%
+ 2B% 2B * If the dynamic component of the application is the limit of scalabilit
+y using MPI, using a Charm ++ framework makes sense.
+ In particular, the use of charm + + (or AMPI) to access features such as
+ work / comm overlapping and fault tolerance is now proposed as future work.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+2.
+ In the third paragraph in introduction, page 2, the authors cited few related
+ works that use HPC but didn’t specify which parallel model, data partition
+ and parallel architectures were used in these works.
+ As the final objective of this manuscript is to find general principals
+ to join GIS and HPC it would be very interesting to provide a complete
+ review of related HPC-GIS works.
+ 
+\end_layout
+
+\begin_layout Standard
+We have described the basic parallel principles used by each cited work,
+ in order to briefly review the state-of-the-art techniques in the area
+ of parallel techniques for GIS problem solving.
+ In this context, we have also discussed the advantages and drawbacks of
+ the cited techniques, and how writing the results to an external DB corresponds
+ to an efficiency gain for spatial parallelization.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+3.
+ For example, “High-performance three-horizon composition algorithm for
+ large-scale terrains.
+ International Journal of Geographical Information Science 25(4): 541-555
+ (2011) by Tabik et al.” partitions the full resolution DEM by block among
+ cores/processors and assigns a multiple halo of lower resolution to the
+ corresponding processor to eliminate the negative edge effect.
+ It uses work sharing as parallel model for both message-passing and shared
+ memory platforms.
+\end_layout
+
+\begin_layout Standard
+This work uses parallelization within each worker process with OpenMP (not
+ POSIX threads as we do).
+ Moreover, there is one worker process per worker node, and the complete
+ exploitation of the computing resources of the worker node is achieved
+ with OpenMP.
+ The tested data sets are two orders of magnitude bigger than ours, whereas
+ the experimental environment in only one host, consequently not taking
+ into account the communication problems/bottlenecks arising in larger scale
+ HPC.
+ As well as in our work, there is no data dependency among the calculated
+ spatial blocks.
+ Consequently, the DEM may be divided in separate blocks to be independently
+ calculated by each worker process.
+ The authors present an improved algorithm, based on the Stewart's one,
+ that achieve the same accuracy with less arithmetic operations and less
+ memory usage.
+ The presented algorithm can also be used to accelerate other applications
+ like visibility.
+ Similarly as in our paper, tasks are dynamically assigned to idle nodes
+ using a task-farming paradigm over MPI.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+4.
+ “Optimal tilt and orientation maps: a multi-algorithm approach for heterogeneou
+s multicore-GPU systems.
+ The Journal of Supercomputing.
+ http://link.springer.com/article/10.1007/s11227-013-0891-1#page-2 “ uses two
+ different algorithms to compute the maximum solar energy maps on hybrid
+ GPU-multicore systems; the first algorithm is the most efficient on GPUs
+ and the second method is the fastest on multicore processors.
+ This work also uses work sharing as parallel strategy and partition the
+ DEM by block among GPUs and CPUs.
+\end_layout
+
+\begin_layout Standard
+As well as in our work, there is no data dependency among the calculated
+ spatial blocks.
+ Consequently, the DEM may be divided in separate blocks to be independently
+ calculated by each worker process.
+ The experimental evaluation is done over multiple cores of one CPU and
+ a GPU, consequently not taking into account the communication problems/bottlene
+cks arising in larger scale HPC.
+\end_layout
+
+\begin_layout Section*
+Algorithm time complexity
+\end_layout
+
+\begin_layout Standard
+The complexity of the radio-coverage prediction algorithm is depicted in
+ Algorithm 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Pseudocode-radio_coverage_prediction"
+
+\end_inset
+
+.
+ The other algorithm listings are given for reference.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $DEM 
+\backslash
+gets$ Digital Elevation Model (DEM) of the whole area.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Comment $O(M)$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $Clutter 
+\backslash
+gets$ signal Losses due to land usage of the whole area.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Comment $O(M)$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $T 
+\backslash
+gets$ transmitter configuration data.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Comment $O(n)$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ForAll{$t 
+\backslash
+in T$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Comment $O(n 
+\backslash
+cdot m^2)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $DEM_t 
+\backslash
+gets $ DEM area within transmission radius of $t$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Comment $O(m)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $Clut_t 
+\backslash
+gets $ Clutter area within transmission radius $t$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Comment $O(m)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $LoS_t 
+\backslash
+gets$ LineOfSight ($DEM_t$)
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Comment $O(m^2)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $PL_t 
+\backslash
+gets$ PathLoss ($DEM_t, Clut_t, LoS_t$)
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Comment $O(m^2)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $Diag_t 
+\backslash
+gets $ Antenna diagram of $t$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Comment $O(1)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $PL_t 
+\backslash
+gets$ AntennaInfluence ($Diag_t, PL_t$)
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Comment $O(m)$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ForAll{$t 
+\backslash
+in T$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Comment $O(n 
+\backslash
+cdot m)$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $CoveragePrediction 
+\backslash
+gets$ PathLossAggregation ($t, PL_t$)
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Comment $O(m)$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State 
+\backslash
+Return $CoveragePrediction$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Pseudo-code of the coverage-prediction algorithm.
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Pseudocode-radio_coverage_prediction"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+To do's
+\end_layout
+
+\begin_layout Itemize
+Look for an alternative International Journal about parallel computing or
+ GIS (non-SCI) that responds as fast as possible.
+ Japanese collegues agreed to cofinance the publication fee.
+\end_layout
+
+\begin_layout Itemize
+Experimental comparison of master-worker and master-worker-DB combo.
+\end_layout
+
+\begin_layout Itemize
+Calculate the computational complexity of the radio-coverage prediction
+ algorithm in order to demonstrate the high time-complexity needed to calculate
+ radio predictions for multiple transmitters.
+\end_layout
+
+\begin_layout Itemize
+Change the objective of the paper from general principles to a more educational/
+didactical approach.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+data decoupling from GRASS before parallelizing;
+\end_layout
+
+\begin_layout Itemize
+comparison of master-worker and master-worker-DB combo;
+\end_layout
+
+\begin_layout Itemize
+work pool (i.e.
+ task farming), add a reference to work pool;
+\end_layout
+
+\begin_layout Itemize
+experimental tests comprising a higher number of computing nodes and more
+ worker processes;
+\end_layout
+
+\begin_layout Itemize
+change the relative-time plots with the overhead introduces by our message-passi
+ng technique, that enables the use of heterogenous clusters.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

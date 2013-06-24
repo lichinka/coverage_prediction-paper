@@ -1,0 +1,7 @@
+Article Title: A GRASS GIS parallel module for radio-propagation predictions
+Journal Name:  International Journal of Geographical Information Science
+Corresponding author: Lucas Benedičič, Research and Development department, Telekom Slovenije, d.d., Cigaletova 15, SI-1000 Ljubljana, Slovenia, email: lucas.benedicic@telekom.si
+Co-author: Felipe A. Cruz, Nagasaki Advanced Computer Center, Nagasaki University, 1-14 Bunkyo-machi, Nagasaki-city, Nagasaki, 852-8521, Japan, email: fcruz@nacc.nagasaki-u.ac.jp
+Co-author: Tsuyoshi Hamada, Nagasaki Advanced Computer Center, Nagasaki University, 1-14 Bunkyo-machi, Nagasaki-city, Nagasaki, 852-8521, Japan, email: hamada@nacc.nagasaki-u.ac.jp
+Co-author: Peter Korošec, Computer Systems department, Jožef Stefan Institute, Jamova cesta 39, SI-1000 Ljubljana, Slovenia, email: peter.korosec@ijs.si
+Acknowledgments: This project was co-financed by the European Union, through the European Social Fund. Hamada acknowledges support from the Japan Society for the Promotion of Science (JSPS) through its Funding Program for World-leading Innovative R&D on Science and Technology (First Program).

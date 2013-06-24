@@ -1,0 +1,66 @@
+--------------------------------------------
+DECISION
+--------------------------------------------
+Dear Dr. Benedičič,
+
+Manuscript ID IJGIS-2013-0120 entitled "A GRASS GIS parallel module for radio-propagation predictions" which you submitted to the International Journal of Geographical Information Science, has been reviewed.  The comments of the reviewers are included at the bottom of this letter.
+
+The reviewers see considerable merit in the manuscript, but suggest major revisions before the paper can be considered publishable.  I am therefore asking you to make those substantial changes to the manuscript. Please try to avoid making the paper longer (keep in mind that the average length of papers in this journal is 18-20 published pages).
+
+A few notes on the reviewers' comments: You will notice that they are quite critical, particularly concerning the degree of novelty of the research reported in your paper. However, they also make suggestions about how the contributions of the paper could be better highlighted in relation to the existing literature. Also, the reviewers see educational value in this manuscript, as an example of using the existing serial module in the open-source software GRASS GIS to design and implement a parallel radio-propagation prediction module.
+
+Hence, when I say "major revisions", I really mean MAJOR. Also, note that there will only be very light-weight copy-editing later on in the editorial and production process. Hence, I recommend that you find a native speaker who helps you copy-editing the grammar and style of the manuscript.
+
+(...)
+
+Once again, thank you for submitting your manuscript to the International Journal of Geographical Information Science and I look forward to receiving your revision.
+
+Sincerely,
+
+Prof. Robert Weibel
+Regional Editor, Europe and Africa
+International Journal of Geographical Information Science
+robert.weibel@geo.uzh.ch
+
+
+
+Reviewers' Comments to Author:
+Reviewer: 1
+<b>Comments to the Author</b>
+It is an interesting work to design and implement a parallel radio-propagation prediction module based on the existing serial module in GRASS GIS, which will be beneficial to the coverage planning of radio networks. However, some issues related to the designing and implementation of the parallel module should be taken into consideration.
+
+1. p1, in the last sentence of the abstract, “which sizes are …” should be “whose sizes…”;
+
+2. p2, evaluating the existed researches on utilizing HPC to solve Geo-spatial problems, the authors said, “…most of these works are application-specific, and do not introduce general principles for jointing GIS and HPC.” I quite disagree to such point. From this manuscript, I can found:
+(1) The topic of this research is also application-specific, and the parallelism for such radio-propagation prediction module is not complicated, namely, the workers just do some pure computations, has nothing with the GRASS environment. The process is that the workers do the step of calculating each transmitter path-loss respectively and mutually exclusive, and then write the intermediate results to the external DB. Thus, the parallel module implementation can fully use the characteristic according to the transmitter assignment independently.
+(2) Such methodology to make the GRASS GIS module parallel has been appeared in the paper titled “Explorations of the implementation of a parallel IDW interpolation algorithm in a Linux cluster-based parallel GIS” (published on C&G). In that research, the slave nodes are also just do their own pure computations assigned from the master node. Therefore, the author’s discussion on that research is also problematic.
+
+3. p4, “…radio-coverage prediction is a computationally-intensive and time-consuming task, hence the importance of using fast and…”, you’d better provide the quantitative data;
+
+4. p7, in Figure 4, it is better to present the raster map involved more transmitters;
+
+5. p8, in Section 3.3, to the parallel module designing and implantations, I have  some questions:
+(1) In order to avoid the workers’ concurrent writing operations, the research adopt the approach of making the workers’ partial coverage evaluation results writing into the external database. After that, the master will reread the intermediate results and then give the aggregation output. In this procedure, it is clever to avoid the bottleneck to adopt this way; however, the efficiency of the module will be affected by the repeat and needless outputting and inputting;
+(2) Meanwhile, the adopted task distribution method maybe obtain low overhed for the heterogeneous cluster system, i.e., different computing tasks will assigned to different workers according with their hardware configurations. However, to the homogeneous cluster, as each node has almost the same hardware, to adopt such approach, the commutation between the master and the workers will be intensive, which will also affect the efficiency of the parallel module. Under this circumstance, I think it’s better to make all the transmitters’ coverage evaluation calculation distribute to all node evenly.
+
+6. p24, please cite Neteler and Mitasova 2008 (3rd edition), the second edition is obsolete.
+
+7. Some trivial problems relate to spelling, formatting etc. e.g., “geosciences” in the references.
+
+Reviewer: 2
+<b>Comments to the Author</b>
+(1)    The calculation of radio-coverage prediction is not well described. The description of LOS and NLOS is separated from other parts of the coverage prediction, which is confusing. I had to constantly go back and forth to put all information together in order to understand the process. I’d suggest the author put them into one section. Also, some figures would be helpful to explain the process. For example, how to determine if a receiver is within LOS? how antenna influence is calculated?
+(2)    The parallel algorithm presented in this paper uses some techniques that have been commonly used in general-purpose parallel computing, e.g., master-worker configuration, task-farm dynamic load-balancing. Were there any innovative techniques created for this particular analysis? Or, were there any innovative techniques developed for spatial analysis in general?  If not, the lack of innovation will greatly degrade the scientific significance of this work.
+(3)    All experiments in this paper were conducted using man-made transmitter data. Is it because the real-world data is not available, or because the real-world data is not big enough for this parallel program to demonstrate the speed-up? I’d like to see some experiment results using real data to show the practical value of this parallel algorithm.
+(4)    Section 5 “related work” should be put in the introduction section.   
+
+
+Reviewer: 3
+<b>Comments to the Author</b>
+This manuscript is about parallel computing the radio-coverage prediction module included in GRASS. The authors utilized task-farming parallel model and reported good scalability results on clusters of quad-core processors. The use of master-worker parallel model is probably the optimal solution not only for the considered module but also for a wide range of GRASS modules. The hybrid implementation that combines message passing and shared memory paradigms is also a good solution because it allows extracting the maximum performance from hybrid systems such as clusters of CMP processors.
+
+The contribution of this paper is not novel since parallelizing existent sequential modules using the data-parallel model in general and task-farming in special has already been tackled by several previous works. Besides, there exist several high-level tools that allow implementing serial modules with a specific patterns or skeletons. I would recommend including a brief review to such tools and explaining the reason why the authors implemented this module manually.
+
+Although I think that the contributions of this manuscript are not very relevant for GIS field per se, however it may be very interesting for high performance and computational GIS community.
+
+In the third paragraph in introduction, page 2, the authors cited few related works that use HPC but didn’t specify which parallel model, data partition and parallel architectures were used in these works. As the final objective of this manuscript is to find general principals to join GIS and HPC it would be very interesting to provide a complete review of related HPC-GIS works. For example, “High-performance three-horizon composition algorithm for large-scale terrains. International Journal of Geographical Information Science 25(4): 541-555 (2011) by Tabik et al.” partitions the full resolution DEM by block among cores/processors and assigns a multiple halo of lower resolution to the corresponding processor to eliminate the negative edge effect.  It uses work sharing as parallel model for both message-passing and shared memory platforms. “Optimal tilt and orientation maps: a multi-algorithm approach for heterogeneous multicore-GPU systems. The Journal of Supercomputing. http://link.springer.com/article/10.1007/s11227-013-0891-1#page-2 “ uses  two different algorithms to compute the maximum solar energy maps on hybrid GPU-multicore systems; the first algorithm is the most efficient  on GPUs and the second method is the fastest on multicore processors. This work also uses work sharing as parallel strategy and partition the DEM by block among GPUs and CPUs.

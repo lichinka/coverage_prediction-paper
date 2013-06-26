@@ -2734,8 +2734,13 @@ structure with four
 double
 \emph default
  attributes.
- However, since each pixel of the RSG is mapped to an instance of the structure,
- a significant increase in memory consumption appears.
+ However, since each pixel of the RSG is mapped to an instance of 
+\change_deleted 2090485842 1372110380
+the
+\change_inserted 2090485842 1372110382
+this
+\change_inserted 450331270 1370597915
+ structure, a significant increase in memory consumption appears.
  Another possibility is for one of the processes, e.g.
  the master, to read entire rows or columns of data before dispatching them
  for processing to the workers 
@@ -2764,7 +2769,13 @@ double
 \change_inserted 450331270 1370597915
  depending on the desired accuracy.
  The geographical location of each element is calculated as the geographical
- location of the matrix plus the element offset within the matrix.
+ location of the matrix plus the element offset within 
+\change_inserted 2090485842 1372110454
+it
+\change_deleted 2090485842 1372110456
+the matrix
+\change_inserted 450331270 1370597915
+.
  The advantage 
 \change_deleted 67598359 1371023229
 here 
